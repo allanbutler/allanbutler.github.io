@@ -23,9 +23,10 @@ Who is a better batter?: Craig Biggio or Jose Altuve? Inspiration for this post 
 library(dplyr)
 library(tidyr)
 library(Lahman)
+```
 
-# Grab career batting average of non-pitchers
-# (allow players that have pitched <= 3 games, like Ty Cobb)
+## Grab career batting average of non-pitchers (allow players that have pitched <= 3 games, like Ty Cobb)
+```{r}
 pitchers <- Pitching %>%
   group_by(playerID) %>%
   summarize(gamesPitched = sum(G)) %>%
@@ -37,24 +38,28 @@ career <- Batting %>%
   group_by(playerID) %>%
   summarize(H = sum(H), AB = sum(AB)) %>%
   mutate(average = H / AB)
-
-# Add player names
+```
+## Add player names
+```{r}
 career <- Master %>%
   tbl_df() %>%
   select(playerID, nameFirst, nameLast) %>%
   unite(name, nameFirst, nameLast, sep = " ") %>%
   inner_join(career, by = "playerID")
+```
 
-# Estimate hyperparameters alpha0 and beta0 for empirical Bayes
+## Estimate hyperparameters alpha0 and beta0 for empirical Bayes
+```{r}
 career_filtered <- career %>% filter(AB >= 500)
 m <- MASS::fitdistr(career_filtered$average, dbeta,
                     start = list(shape1 = 1, shape2 = 10))
 
 alpha0 <- m$estimate[1]
 beta0 <- m$estimate[2]
+```
 
-# For each player, update the beta prior based on the evidence
-# to get posterior parameters alpha1 and beta1
+## For each player, update the beta prior based on the evidence to get posterior parameters alpha1 and beta1
+```{r}
 career_eb <- career %>%
   mutate(eb_estimate = (H + alpha0) / (AB + alpha0 + beta0)) %>%
   mutate(alpha1 = H + alpha0,
@@ -62,16 +67,16 @@ career_eb <- career %>%
   arrange(desc(eb_estimate))
 ```
 
-So let's take a look at the two batters in question:
+## So let's take a look at the two batters in question:
 
 ```{r two_players, dependson = "lahman"}
-# Save them as separate objects too for later:
+## Save them as separate objects too for later:
 biggio <- career_eb %>% filter(name == "Craig Biggio")
 altuve <- career_eb %>% filter(name == "Jose Altuve")
 bagwell <- career_eb %>% filter(name == "Jeff Bagwell")
 two_players <- bind_rows(biggio, altuve)
 
-two_players
+kable(head(two_players))
 ```
 
 We see that Altuve has slightly higher batting average, and a higher shrunken empirical bayes estimate ($$(H + \alpha_0) / (AB + \alpha_0 + \beta_0)$$, where $$\alpha_0$$ and $$\beta_0$$ are our priors). But is Altuve's true probability of getting a hit higher than Biggios? Or is the difference due to chance? The answer lies in considering the range of plausible values for their "true" batting averages after we have taken their batting average (record) into account, or the "actual posterior distributions". These posterior distributions are modeled as beta distributions with the parameters $$\mbox{Beta}(\alpha_0 + H, \alpha_0 + \beta_0 + H + AB)$$
@@ -122,12 +127,12 @@ altuve_simulation <- rbeta(1e6, altuve$alpha1, altuve$beta1)
 biggio_simulation <- rbeta(1e6, biggio$alpha1, biggio$beta1)
 bagwell_simulation <- rbeta(1e6, bagwell$alpha1, bagwell$beta1)
 sim <- mean(altuve_simulation > biggio_simulation)
-sim
+kable(sim)
 ```
 
 ```{r dependson = "two_players"}
 sim2 <- mean(bagwell_simulation > altuve_simulation )
-sim2
+kable(sim2)
 ```
 A 94% probability that Altuve is a better batter than Biggio. For fun lets compare Altuve to Bagwell.
 A much lower probability of 44% that Bagwell is a better batter than Altuve. You could turn up or down the number of draws depending on how much you value speed vs precision. We didn't have to do any mathematical derivation or proofs. Even if we had a more complicated model, the process for simulating from it would still straightforward. This is one of the reasons Bayesian simulation approaches have become popular: computational power has gotten cheap, while doing math is as expensive.
