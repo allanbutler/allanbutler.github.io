@@ -3,13 +3,9 @@ layout: post
 title: "Altuve Bayes"
 output: html_notebook
 ---
-```{r, echo = FALSE}
-opts_chunk$set(cache = TRUE, warning = FALSE, message = FALSE)
-options(digits = 3)
-library(knitr)
-```
 
 ```{r cache = FALSE, echo = FALSE}
+library(knitr)
 library(ggplot2)
 theme_set(theme_bw())
 ```
@@ -17,16 +13,15 @@ theme_set(theme_bw())
 Altuve vs Biggio with Bayesian A/B Testing. 
 Who is a better batter?: Craig Biggio or Jose Altuve? Inspiration for this post comes after reading David Robinson's post comparing Mike Piazza vs Hank Aaron using Bayesian A/B testing [here](http://varianceexplained.org/r/bayesian_ab_baseball/). At the end of 2014 Jose Altuve has a higher career batting average (630 hits/ 2083 at-bats=.302) than Craig Biggio (3060 hits/ 10876 at-bats=.281). Can we say that Altuve's batting skill is actually better than Biggio's or could it be that Altuve has not played long enough to regress towards the mean? In this post we will compare two batters using an empirical Bayesian approach to batting statistics to determine who is the better batter and by how much? Understanding the difference between the two proportions is important in A/B testing. Lets define the problem in terms of the difference between each players posterior distribution, and look at three mathematical and computational strategies we can use to solve the issue related to baseball statistics although many A/B tests can apply the same principles.
 
-### Setup
+## Setup
 
-```{r lahman}
+### Grab career batting average of non-pitchers (allow players that have pitched <= 3 games, like Ty Cobb)
+
+```{r}
 library(dplyr)
 library(tidyr)
 library(Lahman)
-```
 
-## Grab career batting average of non-pitchers (allow players that have pitched <= 3 games, like Ty Cobb)
-```{r}
 pitchers <- Pitching %>%
   group_by(playerID) %>%
   summarize(gamesPitched = sum(G)) %>%
@@ -69,7 +64,7 @@ career_eb <- career %>%
 
 ## So let's take a look at the two batters in question:
 
-```{r two_players, dependson = "lahman"}
+```{r}
 ## Save them as separate objects too for later:
 biggio <- career_eb %>% filter(name == "Craig Biggio")
 altuve <- career_eb %>% filter(name == "Jose Altuve")
@@ -81,7 +76,7 @@ kable(head(two_players))
 
 We see that Altuve has slightly higher batting average, and a higher shrunken empirical bayes estimate ($$(H + \alpha_0) / (AB + \alpha_0 + \beta_0)$$, where $$\alpha_0$$ and $$\beta_0$$ are our priors). But is Altuve's true probability of getting a hit higher than Biggios? Or is the difference due to chance? The answer lies in considering the range of plausible values for their "true" batting averages after we have taken their batting average (record) into account, or the "actual posterior distributions". These posterior distributions are modeled as beta distributions with the parameters $$\mbox{Beta}(\alpha_0 + H, \alpha_0 + \beta_0 + H + AB)$$
 
-```{r dependson = "two_players"}
+```{r}
 library(broom)
 library(ggplot2)
 theme_set(theme_bw())
@@ -98,7 +93,7 @@ This posterior is a probalistic representations of our uncertainty in each estim
 
 Lets throw Bagwell in thier to compared two retired Astro players:
 
-```{r dependson = "two_players", echo = FALSE}
+```{r}
 career_eb %>%
 filter(name %in% c("Craig Biggio", "Jose Altuve", "Jeff Bagwell")) %>%
 inflate(x = seq(.26, .33, .00025)) %>%
@@ -122,18 +117,26 @@ We may be interested in the probability that Altuve is a stronger hitter than Bi
 
 Simulation is the quickest way around not having to do any math. Using each player's $$\alpha_1$$ and $$\beta_1$$ parameters, draw a million items from each of them using rbeta, and compare results:
 
-```{r dependson = "two_players"}
+```{r}
 altuve_simulation <- rbeta(1e6, altuve$alpha1, altuve$beta1)
 biggio_simulation <- rbeta(1e6, biggio$alpha1, biggio$beta1)
 bagwell_simulation <- rbeta(1e6, bagwell$alpha1, bagwell$beta1)
 sim <- mean(altuve_simulation > biggio_simulation)
-kable(sim)
+```
+
+```{r}
+head(sim)
 ```
 
 ```{r dependson = "two_players"}
 sim2 <- mean(bagwell_simulation > altuve_simulation )
 kable(sim2)
 ```
+
+```{r}
+head(sim2)
+```
+
 A 94% probability that Altuve is a better batter than Biggio. For fun lets compare Altuve to Bagwell.
 A much lower probability of 44% that Bagwell is a better batter than Altuve. You could turn up or down the number of draws depending on how much you value speed vs precision. We didn't have to do any mathematical derivation or proofs. Even if we had a more complicated model, the process for simulating from it would still straightforward. This is one of the reasons Bayesian simulation approaches have become popular: computational power has gotten cheap, while doing math is as expensive.
 
@@ -141,7 +144,7 @@ A much lower probability of 44% that Bagwell is a better batter than Altuve. You
 
 These two posteriors have their own independent distribution, and together they form a joing distribution - a density over particular pairs of $$x$$ and $$y$$. The joint distribution could be imagined as a density cloud:
 
-```{r dependson = "two_players", echo = FALSE}
+```{r}
 library(tidyr)
 
 x <- seq(.270, .312, .0002)
@@ -161,7 +164,7 @@ theme(legend.position = "none")
 
 Here we are asking what fraction of the joint probability density lies below the black line, where altuve's average is greater than Biggio's. Clearly more lies below than above, confirming the posterior probability that Altuve is a better hitter by 94%. Using numerical integration to calculate this quantitatively would look like this in R:
 
-```{r integration, dependson = "two_players"}
+```{r}
 d <- .00002
 limits <- seq(.26, .33, d)
 sum(outer(limits, limits, function(x, y) {
@@ -178,7 +181,7 @@ The approach becomes harder to control in problems that have many dimensions.
 
 Closed-form approximation is a much faster approximation approach. When $$\alpha$$ and $$\beta$$ are both fairly large, the beta starts looking similar to a normal distribution, so much so that it can be closely approximated. If you draw the normal approximation to the Altuve and Biggio, they are visually indistinguishable:
 
-```{r dependson = "two_players", echo = FALSE}
+```{r}
 two_players %>%
 mutate(mu = alpha1 / (alpha1 + beta1),
 var = alpha1 * beta1 / ((alpha1 + beta1) ^ 2 * (alpha1 + beta1 + 1))) %>%
@@ -192,7 +195,7 @@ geom_line(lty = 2)
 
 The probability one normal is greater than another is very easy to calculate mathematically:
 
-```{r dependson = "two_players"}
+```{r}
 h_approx <- function(alpha_a, beta_a,
 alpha_b, beta_b) {
 u1 <- alpha_a / (alpha_a + beta_a)
@@ -211,7 +214,7 @@ The calculation is vecorizable in R. The downside being that for low $$\alpha$$ 
 
 In frequentist statistics is a contigency table comparing two proporations. Such as:
 
-```{r dependson = "two_players", echo = FALSE}
+```{r}
 two_players %>%
 transmute(Player = name, Hits = H, Misses = AB - H) %>%
 knitr::kable()
@@ -219,7 +222,7 @@ knitr::kable()
 
 A common classical way to approach contingency table problems in with Pearson's chi-squared test, implemented in R as `prop.test`:
 
-```{r dependson = "two_players"}
+```{r}
 prop.test(two_players$H, two_players$AB)
 ```
 
