@@ -4,12 +4,6 @@ title: "Altuve Bayes"
 output: html_notebook
 ---
 
-```{r cache = FALSE, echo = FALSE}
-library(knitr)
-library(ggplot2)
-theme_set(theme_bw())
-```
-
 Altuve vs Biggio with Bayesian A/B Testing. 
 Who is a better batter?: Craig Biggio or Jose Altuve? Inspiration for this post comes after reading David Robinson's post comparing Mike Piazza vs Hank Aaron using Bayesian A/B testing [here](http://varianceexplained.org/r/bayesian_ab_baseball/). At the end of 2014 Jose Altuve has a higher career batting average (630 hits/ 2083 at-bats=.302) than Craig Biggio (3060 hits/ 10876 at-bats=.281). Can we say that Altuve's batting skill is actually better than Biggio's or could it be that Altuve has not played long enough to regress towards the mean? In this post we will compare two batters using an empirical Bayesian approach to batting statistics to determine who is the better batter and by how much? Understanding the difference between the two proportions is important in A/B testing. Lets define the problem in terms of the difference between each players posterior distribution, and look at three mathematical and computational strategies we can use to solve the issue related to baseball statistics although many A/B tests can apply the same principles.
 
@@ -21,6 +15,9 @@ Who is a better batter?: Craig Biggio or Jose Altuve? Inspiration for this post 
 library(dplyr)
 library(tidyr)
 library(Lahman)
+library(knitr)
+library(ggplot2)
+theme_set(theme_bw())
 
 pitchers <- Pitching %>%
   group_by(playerID) %>%
