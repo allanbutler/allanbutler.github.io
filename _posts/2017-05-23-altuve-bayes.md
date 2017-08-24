@@ -254,7 +254,7 @@ prop.test(two_players$H, two_players$AB)
     ##  0.281  0.311
 ```
 
-We see a significant value &gt;= .05. Therefore confirming our posterior distribution. Prop test also gives you a confidence interval for the difference between the two plater. Now we will use empirical Bayes to compute the credible interval about the difference in Altuve and Biggio. We can do this simulation or integration but we will use our normal approximation
+We see a significant value less than .05. Therefore confirming our posterior distribution. Prop test also gives you a confidence interval for the difference between the two plater. Now we will use empirical Bayes to compute the credible interval about the difference in Altuve and Biggio. We can do this simulation or integration but we will use our normal approximation
 approach:
 
 ```r
