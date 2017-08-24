@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Altuve or Biggio? Using Bayesian A/B Testing"
-image:C:/Users/dell/Downloads/altuve_biggio.jpg
+title: "Altuve or Biggio? 
+subtitle: Using Bayesian A/B Testing"
+image:"img/altuve_biggio.jpg"
 tags: [Astros, Biggio, Altuve] 
 output: html_notebook
 ---
@@ -14,7 +15,7 @@ Who is a better batter?: Craig Biggio or Jose Altuve? Inspiration for this post 
 
 ### Grab career batting average of non-pitchers (allow players that have pitched <= 3 games, like Ty Cobb)
 
-```{r}
+```r
 library(dplyr)
 library(tidyr)
 library(Lahman)
@@ -35,7 +36,7 @@ career <- Batting %>%
   mutate(average = H / AB)
 ```
 ## Add player names
-```{r}
+```r
 career <- Master %>%
   tbl_df() %>%
   select(playerID, nameFirst, nameLast) %>%
@@ -44,7 +45,7 @@ career <- Master %>%
 ```
 
 ## Estimate hyperparameters alpha0 and beta0 for empirical Bayes
-```{r}
+```r
 career_filtered <- career %>% filter(AB >= 500)
 m <- MASS::fitdistr(career_filtered$average, dbeta,
                     start = list(shape1 = 1, shape2 = 10))
@@ -54,7 +55,7 @@ beta0 <- m$estimate[2]
 ```
 
 ## For each player, update the beta prior based on the evidence to get posterior parameters alpha1 and beta1
-```{r}
+```r
 career_eb <- career %>%
   mutate(eb_estimate = (H + alpha0) / (AB + alpha0 + beta0)) %>%
   mutate(alpha1 = H + alpha0,
@@ -64,7 +65,7 @@ career_eb <- career %>%
 
 ## So let's take a look at the two batters in question:
 
-```{r}
+```r
 ## Save them as separate objects too for later:
 biggio <- career_eb %>% filter(name == "Craig Biggio")
 altuve <- career_eb %>% filter(name == "Jose Altuve")
@@ -76,7 +77,7 @@ kable(head(two_players))
 
 We see that Altuve has slightly higher batting average, and a higher shrunken empirical bayes estimate ($$(H + \alpha_0) / (AB + \alpha_0 + \beta_0)$$, where $$\alpha_0$$ and $$\beta_0$$ are our priors). But is Altuve's true probability of getting a hit higher than Biggios? Or is the difference due to chance? The answer lies in considering the range of plausible values for their "true" batting averages after we have taken their batting average (record) into account, or the "actual posterior distributions". These posterior distributions are modeled as beta distributions with the parameters $$\mbox{Beta}(\alpha_0 + H, \alpha_0 + \beta_0 + H + AB)$$
 
-```{r}
+```r
 library(broom)
 library(ggplot2)
 theme_set(theme_bw())
@@ -93,7 +94,7 @@ This posterior is a probalistic representations of our uncertainty in each estim
 
 Lets throw Bagwell in thier to compared two retired Astro players:
 
-```{r}
+```r
 career_eb %>%
 filter(name %in% c("Craig Biggio", "Jose Altuve", "Jeff Bagwell")) %>%
 inflate(x = seq(.26, .33, .00025)) %>%
@@ -117,24 +118,17 @@ We may be interested in the probability that Altuve is a stronger hitter than Bi
 
 Simulation is the quickest way around not having to do any math. Using each player's $$\alpha_1$$ and $$\beta_1$$ parameters, draw a million items from each of them using rbeta, and compare results:
 
-```{r}
+```r
 altuve_simulation <- rbeta(1e6, altuve$alpha1, altuve$beta1)
 biggio_simulation <- rbeta(1e6, biggio$alpha1, biggio$beta1)
 bagwell_simulation <- rbeta(1e6, bagwell$alpha1, bagwell$beta1)
 sim <- mean(altuve_simulation > biggio_simulation)
-```
-
-```{r}
 head(sim)
 ```
 
-```{r dependson = "two_players"}
+```r
 sim2 <- mean(bagwell_simulation > altuve_simulation )
 kable(sim2)
-```
-
-```{r}
-head(sim2)
 ```
 
 A 94% probability that Altuve is a better batter than Biggio. For fun lets compare Altuve to Bagwell.
@@ -144,7 +138,7 @@ A much lower probability of 44% that Bagwell is a better batter than Altuve. You
 
 These two posteriors have their own independent distribution, and together they form a joing distribution - a density over particular pairs of $$x$$ and $$y$$. The joint distribution could be imagined as a density cloud:
 
-```{r}
+```r
 library(tidyr)
 
 x <- seq(.270, .312, .0002)
@@ -164,7 +158,7 @@ theme(legend.position = "none")
 
 Here we are asking what fraction of the joint probability density lies below the black line, where altuve's average is greater than Biggio's. Clearly more lies below than above, confirming the posterior probability that Altuve is a better hitter by 94%. Using numerical integration to calculate this quantitatively would look like this in R:
 
-```{r}
+```r
 d <- .00002
 limits <- seq(.26, .33, d)
 sum(outer(limits, limits, function(x, y) {
@@ -181,7 +175,7 @@ The approach becomes harder to control in problems that have many dimensions.
 
 Closed-form approximation is a much faster approximation approach. When $$\alpha$$ and $$\beta$$ are both fairly large, the beta starts looking similar to a normal distribution, so much so that it can be closely approximated. If you draw the normal approximation to the Altuve and Biggio, they are visually indistinguishable:
 
-```{r}
+```r
 two_players %>%
 mutate(mu = alpha1 / (alpha1 + beta1),
 var = alpha1 * beta1 / ((alpha1 + beta1) ^ 2 * (alpha1 + beta1 + 1))) %>%
@@ -195,7 +189,7 @@ geom_line(lty = 2)
 
 The probability one normal is greater than another is very easy to calculate mathematically:
 
-```{r}
+```r
 h_approx <- function(alpha_a, beta_a,
 alpha_b, beta_b) {
 u1 <- alpha_a / (alpha_a + beta_a)
@@ -214,7 +208,7 @@ The calculation is vecorizable in R. The downside being that for low $$\alpha$$ 
 
 In frequentist statistics is a contigency table comparing two proporations. Such as:
 
-```{r}
+```r
 two_players %>%
 transmute(Player = name, Hits = H, Misses = AB - H) %>%
 knitr::kable()
@@ -222,14 +216,14 @@ knitr::kable()
 
 A common classical way to approach contingency table problems in with Pearson's chi-squared test, implemented in R as `prop.test`:
 
-```{r}
+```r
 prop.test(two_players$H, two_players$AB)
 ```
 
 We see a significant value of .05. Therefore confirming our posterior distribution. Prop test also gives you a confidence interval for the difference between the two plater. Now we will use empirical Bayes to compute the credible interval about the difference in Altuve and Biggio. We can do this simulation or integration but we will use our normal approximation
 approach:
 
-```{r, credible_interval_approx, dependson = "lahman"}
+```r
 credible_interval_approx <- function(a, b, c, d) {
 u1 <- a / (a + b)
 u2 <- c / (c + d)
@@ -249,7 +243,7 @@ credible_interval_approx(altuve$alpha1, altuve$beta1, biggio$alpha1, biggio$beta
 
 Now lets grab 20 random players and compare then to Altuve. We will also calculate a Confidence Interval Using prop.test
 
-```{r intervals, dependson = "credible_interval_approx", echo = FALSE}
+```r
 set.seed(188)
 
 intervals <- career_eb %>%
@@ -261,7 +255,7 @@ ungroup() %>%
 mutate(name = reorder(paste0(name, " (", H, " / ", AB, ")"), -estimate))
 ```
 
-```{r dependson = "intervals", echo = FALSE}
+```r
 f <- function(H, AB) broom::tidy(prop.test(c(H, altuve$H), c(AB, altuve$AB)))
 prop_tests <- purrr::map2_df(intervals$H, intervals$AB, f) %>%
 mutate(estimate = estimate1 - estimate2,
