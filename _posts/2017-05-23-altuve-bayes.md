@@ -95,7 +95,8 @@ ggplot(aes(x, density, color = name)) +
 geom_line() +
 labs(x = "Batting average", color = "")
 ```
-![](altuve_bayes_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-4-1.png)
+
+[![bigg_altuve]({{ site.url }}/img/unnamed-chunk-4-1.png)]({{ site.url }}/img/unnamed-chunk-4-1.png)
 
 This posterior is a probalistic representations of our uncertainty in each estimate. When we ask what is the probability Altuve is better, we are asking "if I drew a random draw from Altuve's batting record and a random draw from Biggio's, what is the probability Altuve is higher"? Notice how Biggio's and Atluve's distribution overlap near the .290 range. Although by examing the distribution there is NOT enough uncertainty in each of the estimates to determine that Biggio could be a better hitter than Altuve at the current year statistics in 2014. If we took a random draw from Biggio's distribution from Altuve's, its very unlikely Biggio would be higher.
 
