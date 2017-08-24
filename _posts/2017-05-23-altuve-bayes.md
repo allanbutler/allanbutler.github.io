@@ -112,7 +112,7 @@ geom_line() +
 labs(x = "Batting average", color = "")
 ```
 
-![](altuve_bayes_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-5-1.png)
+[![bagwell]({{ site.url }}/img/unnamed-chunk-5-1.png)]({{ site.url }}/img/unnamed-chunk-5-1.png)
 
 Jeff Bagwell won a Silver Slugger Award in 1994 and had an excellent batting record. Notice the vast amount of overlap in Bagwell and Altuve's distributions. This means there is enough uncertainty in the estimates that Bagwell could easily be a better batter than Altuve.
 
@@ -134,13 +134,16 @@ biggio_simulation <- rbeta(1e6, biggio$alpha1, biggio$beta1)
 bagwell_simulation <- rbeta(1e6, bagwell$alpha1, bagwell$beta1)
 sim <- mean(altuve_simulation > biggio_simulation)
 head(sim)
-```
+
 ## [1] 0.999
+```
+
 ```r
 sim2 <- mean(bagwell_simulation > altuve_simulation )
 sim2
-```
+
 ## [1] 0.103
+```
 
 A 99% probability that Altuve is a better batter than Biggio. For fun lets compare Altuve to Bagwell.
 A much lower probability of 10% that Bagwell is a better batter than Altuve. You could turn up or down the number of draws depending on how much you value speed vs precision. We didn't have to do any mathematical derivation or proofs. Even if we had a more complicated model, the process for simulating from it would still straightforward. This is one of the reasons Bayesian simulation approaches have become popular: computational power has gotten cheap, while doing math is as expensive.
@@ -149,7 +152,7 @@ A much lower probability of 10% that Bagwell is a better batter than Altuve. You
 
 These two posteriors have their own independent distribution, and together they form a joing distribution - a density over particular pairs of *x* and *y*. The joint distribution could be imagined as a density cloud:
 
-![](altuve_bayes_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-8-1.png)
+[![posterior]({{ site.url }}/img/unnamed-chunk-8-1.png)]({{ site.url }}/img/unnamed-chunk-8-1.png)
 
 ```r
 library(tidyr)
@@ -180,9 +183,9 @@ dbeta(x, altuve$alpha1, altuve$beta1) *
 dbeta(y, biggio$alpha1, biggio$beta1) *
 d ^ 2
 }))
-```
 
 ## [1] 0.997
+```
 
 The approach becomes harder to control in problems that have many dimensions.
 
@@ -190,7 +193,7 @@ The approach becomes harder to control in problems that have many dimensions.
 
 Closed-form approximation is a much faster approximation approach. When *α* and *β* are both fairly large, the beta starts looking similar to a normal distribution, so much so that it can be closely approximated. If you draw the normal approximation to the Altuve and Biggio, they are visually indistinguishable:
 
-![](altuve_bayes_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-9-1.png)
+[![closed_form]({{ site.url }}/img/unnamed-chunk-9-1.png)]({{ site.url }}/img/unnamed-chunk-9-1.png)
 
 ```r
 two_players %>%
@@ -217,8 +220,9 @@ pnorm(0, u2 - u1, sqrt(var1 + var2))
 }
 
 h_approx(altuve$alpha1, altuve$beta1, biggio$alpha1, biggio$beta1)
-```
+
 ## [1] 0.999
+```
 
 The calculation is vecorizable in R. The downside being that for low *α* or low *β*, the normal approximation to the beta is going to fit rather poorly. The closed-form approximation is systematically biased. In certain problems it will give too high of an answer and some cases too low. When we have prior alpha and beta we are safe using the closed-form approximation.
 
@@ -235,9 +239,8 @@ A common classical way to approach contingency table problems in with Pearson's 
 
 ```r
 prop.test(two_players$H, two_players$AB)
-```
 
-  ## 
+    ## 
     ##  2-sample test for equality of proportions with continuity
     ##  correction
     ## 
@@ -249,6 +252,7 @@ prop.test(two_players$H, two_players$AB)
     ## sample estimates:
     ## prop 1 prop 2 
     ##  0.281  0.311
+```
 
 We see a significant value &gt;= .05. Therefore confirming our posterior distribution. Prop test also gives you a confidence interval for the difference between the two plater. Now we will use empirical Bayes to compute the credible interval about the difference in Altuve and Biggio. We can do this simulation or integration but we will use our normal approximation
 approach:
@@ -271,7 +275,7 @@ conf.high = qnorm(.975, mu_diff, sd_diff))
 credible_interval_approx(altuve$alpha1, altuve$beta1, biggio$alpha1, biggio$beta1)
 ```
 
-## # A tibble: 1 x 4
+    ## # A tibble: 1 x 4
     ##   posterior estimate conf.low conf.high
     ##       <dbl>    <dbl>    <dbl>     <dbl>
     ## 1     0.999  -0.0262  -0.0433  -0.00911
@@ -308,7 +312,7 @@ xlab("Altuve average - Player average") +
 ylab("Player")
 ```
 
-![](altuve_bayes_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-13-1.png)
+[![intervals]({{ site.url }}/img/unnamed-chunk-13-1.png)]({{ site.url }}/img/unnamed-chunk-13-1.png)
 
 Because there is not a lot of information on certain players their credible intervals end up smaller than their confidence intervals. This is because we are able to use the prior to adjust the expectations (Esix Snead may have ended up with a higher batting average than Altuve but we are sure it was not .25 higher). When provided with a lot of information, the confidence and credible intervals approach almost perfectly. Therefore, empirical Bayes A/B credible intervals are a way to "shrink" frequentist confidence intervals, by sharing power across players.
 
