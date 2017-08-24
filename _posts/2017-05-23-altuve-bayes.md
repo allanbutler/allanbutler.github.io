@@ -1,6 +1,8 @@
 ---
 layout: post
-title: "Altuve Bayes"
+title: "Altuve or Biggio? Using Bayesian A/B Testing"
+image:C:/Users/dell/Downloads/altuve_biggio.jpg
+tags: [Astros, Biggio, Altuve] 
 output: html_notebook
 ---
 
