@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Altuve or Biggio? 
-subtitle: Using Bayesian A/B Testing"
-image:"img/altuve_biggio.jpg"
+title: Altuve or Biggio? 
+subtitle: Using Bayesian A/B Testing
+image:img/altuve_biggio.jpg
 tags: [Astros, Biggio, Altuve] 
 ---
 
