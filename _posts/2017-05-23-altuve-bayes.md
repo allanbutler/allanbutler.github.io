@@ -12,7 +12,7 @@ Who is a better batter?: Craig Biggio or Jose Altuve? Inspiration for this post 
 
 ## Setup
 
-### Grab career batting average of non-pitchers (allow players that have pitched <= 3 games, like Ty Cobb)
+#### Grab career batting average of non-pitchers (allow players that have pitched <= 3 games, like Ty Cobb)
 
 ```r
 library(dplyr)
@@ -34,7 +34,7 @@ career <- Batting %>%
   summarize(H = sum(H), AB = sum(AB)) %>%
   mutate(average = H / AB)
 ```
-## Add player names
+#### Add player names
 ```r
 career <- Master %>%
   tbl_df() %>%
@@ -43,7 +43,7 @@ career <- Master %>%
   inner_join(career, by = "playerID")
 ```
 
-## Estimate hyperparameters alpha0 and beta0 for empirical Bayes
+#### Estimate hyperparameters alpha0 and beta0 for empirical Bayes
 ```r
 career_filtered <- career %>% filter(AB >= 500)
 m <- MASS::fitdistr(career_filtered$average, dbeta,
@@ -53,7 +53,7 @@ alpha0 <- m$estimate[1]
 beta0 <- m$estimate[2]
 ```
 
-## For each player, update the beta prior based on the evidence to get posterior parameters alpha1 and beta1
+#### For each player, update the beta prior based on the evidence to get posterior parameters alpha1 and beta1
 ```r
 career_eb <- career %>%
   mutate(eb_estimate = (H + alpha0) / (AB + alpha0 + beta0)) %>%
@@ -62,7 +62,7 @@ career_eb <- career %>%
   arrange(desc(eb_estimate))
 ```
 
-## So let's take a look at the two batters in question:
+### So let's take a look at the two batters in question:
 
 ```r
 ## Save them as separate objects too for later:
