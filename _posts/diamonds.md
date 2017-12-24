@@ -4,36 +4,6 @@ Allan Butler
 2017-12-24
 
 ``` r
-library(tidyverse)
-```
-
-    ## Warning: package 'tidyverse' was built under R version 3.3.3
-
-    ## Loading tidyverse: ggplot2
-    ## Loading tidyverse: tibble
-    ## Loading tidyverse: tidyr
-    ## Loading tidyverse: readr
-    ## Loading tidyverse: purrr
-    ## Loading tidyverse: dplyr
-
-    ## Warning: package 'ggplot2' was built under R version 3.3.2
-
-    ## Warning: package 'tibble' was built under R version 3.3.3
-
-    ## Warning: package 'tidyr' was built under R version 3.3.2
-
-    ## Warning: package 'readr' was built under R version 3.3.3
-
-    ## Warning: package 'purrr' was built under R version 3.3.3
-
-    ## Warning: package 'dplyr' was built under R version 3.3.3
-
-    ## Conflicts with tidy packages ----------------------------------------------
-
-    ## filter(): dplyr, stats
-    ## lag():    dplyr, stats
-
-``` r
 diamonds
 ```
 
@@ -62,4 +32,4 @@ a <- ggplot(diamonds, aes(carat, price, color = clarity)) +
 a 
 ```
 
-![](diamonds_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-2-1.png)
+![](diamonds_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-3-1.png)
