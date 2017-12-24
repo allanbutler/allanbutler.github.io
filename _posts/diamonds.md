@@ -32,4 +32,5 @@ a <- ggplot(diamonds, aes(carat, price, color = clarity)) +
 a 
 ```
 
+
 ![](diamonds_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-3-1.png)
