@@ -1,7 +1,10 @@
-Housebreaking My Puppy Using Data Science
-================
-Allan Butler
-2018-04-28
+---
+layout: post
+title: Puppy Training w/ Data Science
+image: _posts/2018-04-28-dog-housebreaking_files/figure-markdown_github/IMG_0264.jpg
+tags: [r, tidyverse, rstats, tidyquant, lime, caret, broom]
+
+### Housebreaking My Puppy Using Data Science
 
 Housetraining a puppy is work. Don't let the cuteness of your pup fool you into thinking housetraining will be a breeze, although the right training up front will save you agony down the road. After reading [Rover's](https://www.rover.com/blog/complete-guide-puppy-potty-training/) post on house breaking your dog I decided to take a data approach to housetraining by documenting eating and bathroom breaks. After a month of recording data I was not only extremely grateful for automation of data warehouses but also able to determine if my pup was on the right track with her potty and eating behaviors. For this post I will only use your bathroom dataset.
 
