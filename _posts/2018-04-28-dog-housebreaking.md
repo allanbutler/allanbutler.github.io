@@ -3,6 +3,7 @@ layout: post
 title: Puppy Training w/ Data Science
 image: _posts/2018-04-28-dog-housebreaking_files/figure-markdown_github/IMG_0264.jpg
 tags: [r, tidyverse, rstats, tidyquant, lime, caret, broom]
+---
 
 ### Housebreaking My Puppy Using Data Science
 
