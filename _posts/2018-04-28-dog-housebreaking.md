@@ -69,6 +69,7 @@ potty_records %>%
   theme_fivethirtyeight() 
 ```
 [![percent]({{ site.url }}/img/unnamed-chunk-3-1.png)]({{ site.url }}/img/unnamed-chunk-3-1.png)
+
 Figure 1.2 Time Series of Success or Accident by Percent.
 
 Great, it appears `Success` has a linear trend upward over time despite some minor setbacks. She appears to be a quick learner and `Accidents` have definitely decreased.
