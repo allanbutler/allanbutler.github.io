@@ -5,7 +5,7 @@ image: img/IMG_0264.jpg
 tags: [r, tidyverse, rstats, tidyquant, lime, caret, broom]
 ---
 
-![](aldee153.github.io/img/IMG_5556.JPG)
+[![aimee]({{ site.url }}/img/IMG_5556.JPG)]({{ site.url }}/img/IMG_5556.JPG)
 
 ### Housebreaking My Puppy Using Data Science
 
