@@ -10,7 +10,7 @@ tags: [r, tidyverse, rstats, tidyquant, lime, caret, broom]
 [![aimee]({{ site.url }}/img/IMG_5556.JPG)]({{ site.url }}/img/IMG_5556.JPG)
 Figure 1.1 Don't let the cuteness fool you.
 
-Housetraining a puppy is work. Don't let the cuteness of your pup fool you into thinking housetraining will be a breeze, although the right training up front will save you agony down the road. After reading [Rover's](https://www.rover.com/blog/complete-guide-puppy-potty-training/) post on house breaking your dog I decided to take a data approach to housetraining by documenting eating and bathroom breaks. After a month of recording data I was not only extremely grateful for automation of data warehouses but also able to determine if my pup was on the right track with her potty and eating behaviors. For this post I will only use your bathroom dataset.
+Housetraining a puppy is work. Don't let the cuteness of your pup fool you into thinking housetraining will be a breeze, although the right training up front will save you agony down the road. After reading [Rover's](https://www.rover.com/blog/complete-guide-puppy-potty-training/) post on house breaking your dog I decided to take a data approach to housetraining by documenting eating and bathroom breaks. After a month of recording data I was not only extremely grateful for automation of data warehouses but also able to determine if my pup was on the right track with her potty and eating behaviors. For this post I will only use her bathroom dataset.
 
 First we will load the data into a data frame for exploratory analysis along with the correct R packages. Exploratory analysis is about asking a series of data questions and trying to gain useful insights to influence our decision making.
 
