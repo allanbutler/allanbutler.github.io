@@ -391,7 +391,12 @@ pred %>%
     ##   sample_id Accident Success  actual prediction correct
     ## 1         1    0.008   0.992 Success    Success correct
 
-Case 1 was correctly predicted to come from the `Success` group because it - Has play as a consequence for action after potty break - The hour the action occurred was &lt;= 8
+Case 1 was correctly predicted to come from the `Success` group because it 
+
+- Has play as a consequence for action after potty break 
+- The hour the action occurred was &lt;= 8
+- The action before was sniffing
+- The type was labeled U
 
 The explanatory plot tells us for each feature the range of values the data point would fall. If it does, this gets counted as support for this prediction, if it does not, it gets scored as contradictory. For instance, examining case 3 on the plot, scolding contradicts the support for a `Success`.
 
