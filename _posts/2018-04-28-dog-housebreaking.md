@@ -7,7 +7,10 @@ tags: [r, tidyverse, rstats, tidyquant, lime, caret, broom]
 
 ### Housebreaking My Puppy Using Data Science
 
-Housetraining a puppy is work. Don't let the cuteness of your pup fool you into thinking housetraining will be a breeze, although the right training up front will save you agony down the road. After reading [Rover's](https://www.rover.com/blog/complete-guide-puppy-potty-training/) post on house breaking your dog I decided to take a data approach to housetraining by documenting eating and bathroom breaks. After a month of recording data I was not only extremely grateful for automation of data warehouses but also able to determine if my pup was on the right track with her potty and eating behaviors. For this post I will only use your bathroom dataset.
+[![aimee]({{ site.url }}/img/IMG_5556.JPG)]({{ site.url }}/img/IMG_5556.JPG)
+Figure 1.1 Don't let the cuteness fool you.
+
+Housetraining a puppy is work. Don't let the cuteness of your pup fool you into thinking housetraining will be a breeze, although the right training up front will save you agony down the road. After reading [Rover's](https://www.rover.com/blog/complete-guide-puppy-potty-training/) post on house breaking your dog I decided to take a data approach to housetraining by documenting eating and bathroom breaks. After a month of recording data I was not only extremely grateful for automation of data warehouses but also able to determine if my pup was on the right track with her potty and eating behaviors. For this post I will only use her bathroom dataset.
 
 First we will load the data into a data frame for exploratory analysis along with the correct R packages. Exploratory analysis is about asking a series of data questions and trying to gain useful insights to influence our decision making.
 
@@ -28,7 +31,7 @@ potty_records <- read_csv("C:/Users/dell/Desktop/Aimee/potty_records.csv") %>%
 potty_records$hour <- as.POSIXlt(potty_records$Time, format="%H:%M")$hour
 ```
 
-### Visual Exploration
+#### Visual Exploration
 
 Now that we have the data loaded with the appropriate packages we can start the EDA process by drawing some plots. Lets start with some plots to get to know the data and visualize whether there are any trends that would help understand the relationship between `Potty break or in-house accident?` variable and other variables. But first we need to clarify where the missing values exist and if it will cause a problem with the EDA phase.
 
@@ -65,8 +68,9 @@ potty_records %>%
           subtitle = "by % of Success or Accident") +
   theme_fivethirtyeight() 
 ```
+[![percent]({{ site.url }}/img/unnamed-chunk-3-1.png)]({{ site.url }}/img/unnamed-chunk-3-1.png)
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-3-1.png)
+Figure 1.2 Time Series of Success or Accident by Percent.
 
 Great, it appears `Success` has a linear trend upward over time despite some minor setbacks. She appears to be a quick learner and `Accidents` have definitely decreased.
 
@@ -84,8 +88,8 @@ potty_records %>%
        x = "Hour") +
   theme_ridges(font_size = 13, grid = TRUE) + theme(axis.title.y = element_blank())
 ```
-
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-4-1.png)
+[![day_hour]({{ site.url }}/img/unnamed-chunk-4-1.png)]({{ site.url }}/img/unnamed-chunk-4-1.png)
+Figure 1.2 Joy Plot of Potty Breaks by Day & Hour.
 
 Here we can see that Aimee definitely goes to the bathroom more often later in the day. I would assume this is because I am home from work and she is out more. Also, the variance in Thursday is also a little unusual.
 
@@ -111,13 +115,15 @@ accident_hour <- ggplot(aes(x = hour), data = accident) + geom_histogram(bins = 
 accident_hour
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-5-1.png)
+[![hist_acc]({{ site.url }}/img/unnamed-chunk-5-1.png)]({{ site.url }}/img/unnamed-chunk-5-1.png)
+Figure 1.3 Histogram of Accident Times by Type.
 
 ``` r
 success_hour
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-5-2.png)
+[![hist_succ]({{ site.url }}/img/unnamed-chunk-5-2.png)]({{ site.url }}/img/unnamed-chunk-5-2.png)
+Figure 1.4 Histogram of Success Times by Type.
 
 Again, the afternoon seems to be her most active restroom activity as well as when the most accidents occur. This is probably due to Aimee being out of her crate and having more free range.
 
@@ -155,13 +161,15 @@ action_accident <- ggplot(aes(x = `What was the dog doing pre-elimination? (nap,
 action_success
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-6-1.png)
+[![bar_succ]({{ site.url }}/img/unnamed-chunk-6-1.png)]({{ site.url }}/img/unnamed-chunk-6-1.png)
+Figure 1.5 Bar Chart of Success by Before Action.
 
 ``` r
 action_accident
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-6-2.png)
+[![bar_acc]({{ site.url }}/img/unnamed-chunk-6-2.png)]({{ site.url }}/img/unnamed-chunk-6-2.png)
+Figure 1.5 Bar Chart of Accident by Before Action.
 
 Examing the action before accident bar chart shows a clear trend of sniffing before the accident happens. This is a common and intuitive tell from any dog that they are searching for relief spot but it is nice to have the data to support the claim.
 
@@ -183,7 +191,8 @@ ggplot(aes(x = `Consequences for the dog (play, treat, walk, scolding, clean up/
        title = 'Consequences after Successful Relief')
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-7-1.png)
+[![bar_cons]({{ site.url }}/img/unnamed-chunk-7-1.png)]({{ site.url }}/img/unnamed-chunk-7-1.png)
+Figure 1.6 Bar Chart of Success by Consequence.
 
 ``` r
 d <- potty_records %>%
@@ -201,7 +210,8 @@ ggplot(aes(x = `Consequences for the dog (play, treat, walk, scolding, clean up/
        title = 'Consequences for Accident in House')
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-7-2.png)
+[![bar_consq]({{ site.url }}/img/unnamed-chunk-7-2.png)]({{ site.url }}/img/unnamed-chunk-7-2.png)
+Figure 1.6 Bar Chart of Accident by Consequence.
 
 When training Aimee we are going by Karen Pryor's positive reinforcement method and it definitely appears in the data but 33% my partner and I could not hold back the scolding. After all, we are only human.
 
@@ -232,7 +242,8 @@ potty_records %>%
   guides(fill = guide_legend(title = "Type"))
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-8-1.png)
+[![boxPlot]({{ site.url }}/img/unnamed-chunk-8-1.png)]({{ site.url }}/img/unnamed-chunk-8-1.png)
+Figure 1.7 Box Plot.
 
 Examining the box plot we see that `Accident` by day appears to have a wider variance while Success occurs more often but has one outlier. Since this is `group_by` day I can remember the unsuccessful day of housebreaking. Lets dig deeper and build some models.
 
@@ -367,7 +378,8 @@ plot_features(explanation_df[1:24, ], ncol = 2) +
   labs(title = "LIME Feature Importance Visualization")
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-15-1.png)
+[![features]({{ site.url }}/img/unnamed-chunk-15-1.png)]({{ site.url }}/img/unnamed-chunk-15-1.png)
+Figure 1.9 Lime Feature Importantance.
 
 Lime is able to provide with an easy to view plot but what does the data tell us? Lets examine case 1:
 
@@ -379,7 +391,12 @@ pred %>%
     ##   sample_id Accident Success  actual prediction correct
     ## 1         1    0.008   0.992 Success    Success correct
 
-Case 1 was correctly predicted to come from the `Success` group because it - Has play as a consequence for action after potty break - The hour the action occurred was &lt;= 8
+Case 1 was correctly predicted to come from the `Success` group because it 
+
+- Has play as a consequence for action after potty break 
+- The hour the action occurred was &lt;= 8
+- The action before was sniffing
+- The type was labeled U
 
 The explanatory plot tells us for each feature the range of values the data point would fall. If it does, this gets counted as support for this prediction, if it does not, it gets scored as contradictory. For instance, examining case 3 on the plot, scolding contradicts the support for a `Success`.
 
@@ -395,7 +412,8 @@ plot_explanations(df) +
    subtitle = "Hold Out (Test) Set, First 30 Cases Shown")
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-17-1.png)
+[![lime]({{ site.url }}/img/unnamed-chunk-17-1.png)]({{ site.url }}/img/unnamed-chunk-17-1.png)
+Figure 1.10 Lime Feature Importantance Heatmap.
 
 ### Power Test and Difference in Means
 
@@ -462,7 +480,8 @@ ggplot(aes(mean_success, n, color = Type)) +
   theme_bw()
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-20-1.png)
+[![success_rate]({{ site.url }}/img/unnamed-chunk-20-1.png)]({{ site.url }}/img/unnamed-chunk-20-1.png)
+Figure 2 Success Rate by Type.
 
 The snapshot of the data tells us that `D` has a higher rate of `Success` than the `U` but the confidence intervals are extreme in comparison.
 
@@ -541,7 +560,8 @@ test_by_day %>%
   theme_fivethirtyeight() 
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-23-1.png)
+[![pValue]({{ site.url }}/img/unnamed-chunk-23-1.png)]({{ site.url }}/img/unnamed-chunk-23-1.png)
+Figure 2.1 P-Value of Success by Day.
 
 The difference in means is statistically significant at the conventional levels of confidence. As the p-value is larger than our 0.05 significance level, we can reject the null hypothesis that there is no statistical difference in `Success` vs `Accident` for housebreaking Aimee. This type of statistical test is useful for me to determine whether housebreaking Aimee resulted in a statistical difference of `Succcess`.
 
@@ -574,7 +594,8 @@ effect %>%
   theme_fivethirtyeight() 
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-25-1.png)
+[![day_success]({{ site.url }}/img/unnamed-chunk-25-1.png)]({{ site.url }}/img/unnamed-chunk-25-1.png)
+Figure 2.2 Percent Change of Success by Day.
 
 ### Final hypothesis
 
@@ -592,7 +613,8 @@ ggplot(data = test, aes(`Potty break or in-house accident?`, hour)) +
   coord_flip()
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-26-1.png)
+[![boxplot2]({{ site.url }}/img/unnamed-chunk-26-1.png)]({{ site.url }}/img/unnamed-chunk-26-1.png)
+Figure 2.3 Box Plot of Potty break or in-house accident? by Hour
 
 ``` r
 qplot(fill = `Potty break or in-house accident?`, x = hour, data = test, geom = "density", 
@@ -602,7 +624,8 @@ qplot(fill = `Potty break or in-house accident?`, x = hour, data = test, geom = 
   theme_bw()
 ```
 
-![](2018-04-28-dog-housebreaking_files/figure-markdown_github/unnamed-chunk-27-1.png)
+[![density]({{ site.url }}/img/unnamed-chunk-27-1.png)]({{ site.url }}/img/unnamed-chunk-27-1.png)
+Figure 2.4 Density Plot by Hour
 
 ``` r
 hour_t.test <- with(test, t.test(hour ~ `Potty break or in-house accident?`))
@@ -638,3 +661,6 @@ Now for the data conclusions, using a schedule and rewarding good behavior was k
 Remember that correlation is not causation. The later it is in the day is not causing Aimee to have more or less success with housebreaking. It is more likely due to both my partner and I being home and present while being able to pay more or less attention to her behavior.
 
 In the future we could also use the food and water data I collected to help with determining variables in housebreaking. Animals that eat/drink on a set schedule tend to use the bathroom on a schedule. Another useful variable may have been to group by Date and calculate the average time between potty trips to gather a general pattern. A good data analysis always generates insights but also helps generate more questions.
+
+[![aimee2]({{ site.url }}/img/IMG_0264.jpg)]({{ site.url }}/img/IMG_0264.jpg)
+Figure 2.5 Aimee
