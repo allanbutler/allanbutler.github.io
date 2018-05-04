@@ -5,7 +5,7 @@ image: img/IMG_0264.jpg
 tags: [r, tidyverse, rstats, tidyquant, lime, caret, broom]
 ---
 
-### Housebreaking My Puppy Using Data Science
+### A Data Driven Approach to Housebreaking My Puppy
 
 [![aimee]({{ site.url }}/img/IMG_5556.JPG)]({{ site.url }}/img/IMG_5556.JPG)
 Figure 1.1 Don't let the cuteness fool you.
