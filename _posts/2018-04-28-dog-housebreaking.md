@@ -26,7 +26,7 @@ library(lime)
 library(ggridges)
 library(viridis)
 
-potty_records <- read_csv("C:/Users/dell/Desktop/Aimee/potty_records.csv") %>%
+potty_records <- read_csv("Aimee/potty_records.csv") %>%
   mutate(Date = mdy(Date), day_of_week = wday(Date, label = TRUE))
 potty_records$hour <- as.POSIXlt(potty_records$Time, format="%H:%M")$hour
 ```
