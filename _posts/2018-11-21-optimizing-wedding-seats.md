@@ -18,17 +18,17 @@ Key: 2000 = spouse/date, 900 = sibling, 700 = parent/child, 600 = grandparent, 5
 
 Unfortunately there was no other ways to tackle this problem then to manually enter the matrix data in excel, feel free to reach out if you can think of any better suggestions.
 
-```{r}
+```r
 library(tidyverse)
 library(genalg)
 
 wedding_matrix <- read_csv("wedding_seating_chart.csv")
 ```
 
-```{r}
-##The Chromosome will be binary, with the number of genes corresponding to the number of guests. 1s indicate
-## the guest is at the current table and 0s indicate they are not. The model will seat one table at a time
-## and iterate until all the tables are filled
+```r
+# 1s indicate
+# the guest is at the current table and 0s indicate they are not. The model will seat one table at a time
+# and iterate until all the tables are filled
 
 ### Define Fitness Function
 
@@ -136,7 +136,7 @@ Nine = as.character(weddingd_matrix$X)
 
 Combine tables into fineal dataframe
 
-```{r}
+```r
 seating_chart <- as.data.frame(bind_rows(One, Two, Three, Four, Five, Six, Seven, Eight, Nine))
 
 #Save Completed Seating Chart in csv
