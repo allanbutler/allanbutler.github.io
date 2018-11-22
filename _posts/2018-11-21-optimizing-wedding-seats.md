@@ -9,7 +9,7 @@ tags: [r, tidyverse, rstats, machinelearning]
 
 Recently my wife and I were married. We were so fortunate that many of our close friends and family members attended our wedding in California (we live in Texas). My beautiful wife was the ultimate planer and tackled almost every task of wedding planning with her mom. I definitely lucked out with my responsibilities being minimal. However, when she asked for my help with the seating chart of the 154 guests I knew this was a problem that data science could help solve. Luckily after reading Alogrithms to Live By [Christian and Griffiths](https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365) I came across Meghan Bellows story of planning her wedding while also doing her PhD research in chemical engineering. Using specific scores for each guest relationship and specifying a few constraints I was able to replicate a similar 'travelling salesman problem'. Along the way I also found this github repo [here](https://github.com/meganstiles/Seating_Chart) by Megan Stiles. She tackled the optimization problem of seating 90 guests, so big shoutout to her for the R code help. 
 
-[![tables]({{ site.url }}/img/pic_tables.JPG)]({{ site.url }}/img/pic_tables.JPG)
+[![tables]({{ site.url }}/img/pic_tables.jpg)]({{ site.url }}/img/pic_tables.jpg)
 Figure 1.1 Final tables at the wedding.
 
 Based on the assumption that people want to sit at a table with the people they are most closely related we made our guest relational matrix of 90 guests for the Wedding Reception, 9 Tables of 10.
@@ -145,5 +145,5 @@ write_csv(Chart, "Wedding_Seating_Chart.csv")
 
 The final seating chart solution had only a few minor tweaks made by my bride but saved me from the strenuous process of deciding where each individual should sit and I also found a way to include R in my wedding. Also, the wedding was a blast!
 
-[![wife]({{ site.url }}/img/pic2.JPG)]({{ site.url }}/img/pic2.JPG)
+[![wife]({{ site.url }}/img/pic2.jpg)]({{ site.url }}/img/pic2.jpg)
 Figure 2 Wife and I
