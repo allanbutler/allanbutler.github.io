@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Optimizing Wedding Seat Charts
+title: Optimizing Wedding Reception Seating Charts
 image: img/jumping.jpg
-tags: [r, tidyverse, rstats, tidyquant, lime, caret, broom]
+tags: [r, tidyverse, rstats, machinelearning]
 ---
 
 ### Optimizing Wedding Reception Seating Charts
