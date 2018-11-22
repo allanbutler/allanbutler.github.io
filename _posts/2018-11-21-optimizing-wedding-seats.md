@@ -10,7 +10,7 @@ tags: [r, tidyverse, rstats, machinelearning]
 Recently my wife and I were married. We were so fortunate that many of our close friends and family members attended our wedding in California (we live in Texas). My beautiful wife was the ultimate planer and tackled almost every task of wedding planning with her mom. I definitely lucked out with my responsibilities being minimal. However, when she asked for my help with the seating chart of the 154 guests I knew this was a problem that data science could help solve. Luckily after reading Alogrithms to Live By [Christian and Griffiths](https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365) I came across Meghan Bellows story of planning her wedding while also doing her PhD research in chemical engineering. Using specific scores for each guest relationship and specifying a few constraints I was able to replicate a similar 'travelling salesman problem'. Along the way I also found this github repo [here](https://github.com/meganstiles/Seating_Chart) by Megan Stiles. She tackled the optimization problem of seating 90 guests, so big shoutout to her for the R code help. 
 
 [![tables]({{ site.url }}/img/pic_tables.jpg)]({{ site.url }}/img/pic_tables.jpg)
-Figure 1.1 Final tables at the wedding.
+Figure 1 Final tables at the reception.
 
 Based on the assumption that people want to sit at a table with the people they are most closely related we made our guest relational matrix of 90 guests for the Wedding Reception, 9 Tables of 10.
 
