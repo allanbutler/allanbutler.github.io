@@ -146,4 +146,4 @@ write_csv(Chart, "Wedding_Seating_Chart.csv")
 The final seating chart solution had only a few minor tweaks made by my bride but saved me from the strenuous process of deciding where each individual should sit and I also found a way to include R in my wedding. Also, the wedding was a blast!
 
 [![wife]({{ site.url }}/img/pic2.jpg)]({{ site.url }}/img/pic2.jpg)
-Figure 2 Wife and I
+Figure 2 My Beautiful Wife and I
