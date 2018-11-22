@@ -7,16 +7,16 @@ tags: [r, tidyverse, rstats, machinelearning]
 
 ### Optimizing Wedding Reception Seating Charts
 
-Recently my wife and I were married. We were so fortunate that many of our close friends and family members attended our wedding in California (we live in Texas). My beautiful wife was the ultimate planer and tackled almost every task of wedding planning with her mom. I definitely lucked out with my responsibilities being minimal. However, when she asked for my help with the seating chart of the 154 guests I knew this was a problem that data science could help solve. Luckily after reading Alogrithms to Live By [Christian and Griffiths](https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365) I came across Meghan Bellows story of planning her wedding while also doing her PhD research in chemical engineering. Using specific scores for each guest relationship and specifying a few constraints I was able to replicate a similar 'travelling salesman problem'. Along the way I also found this github repo [here](https://github.com/meganstiles/Seating_Chart) by Megan Stiles. She tackled the optimization problem of seating 90 guests, so big shoutout to her for the R code help. 
+Recently my wife and I were married. We were so fortunate that many of our close friends and family members attended our wedding in California (we live in Texas). My beautiful wife was the ultimate planer and tackled almost every task of wedding planning with her mom. I definitely lucked out with my responsibilities being minimal. However, when she asked for my help with the seating chart of the 90 guests I knew this was a problem that data science could help solve. [Luckily after reading Alogrithms to Live By Christian and Griffiths](https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365) I came across Meghan Bellows story of planning her wedding while also doing her PhD research in chemical engineering. Using specific scores for each guest relationship and specifying a few constraints I was able to replicate a similar 'travelling salesman problem'. Along the way I also found this github repo [here](https://github.com/meganstiles/Seating_Chart) by Megan Stiles. She tackled the optimization problem of seating 90 guests, so big shoutout to her for the R code help. 
 
 [![tables]({{ site.url }}/img/pic_tables.jpg)]({{ site.url }}/img/pic_tables.jpg)
-Figure 1 Final tables at the reception.
+Figure 1. Final tables at the reception.
 
 Based on the assumption that people want to sit at a table with the people they are most closely related we made our guest relational matrix of 90 guests for the Wedding Reception, 9 Tables of 10.
 
-Key: 2000 = spouse/date, 900 = sibling, 700 = parent/child, 600 = grandparent, 500 = cousin, 300 = aunt/niece, 100 = friend, 0 = don't know, 5000 = Bride/Groom 
+Key: 2000 = Spouse/Date, 900 = Sibling, 700 = Parent/Child, 600 = Grandparent, 500 = Cousin, 300 = Aunt/Niece, 100 = Friend, 0 = Strangers, 5000 = Bride/Groom 
 
-Unfortunately there was no other ways to tackle this problem then to manually enter the matrix data in excel, feel free to reach out if you can think of any better suggestions.
+Unfortunately there were no other ways to tackle this problem then to manually enter the matrix data into excel, feel free to reach out if you can think of any better suggestions.
 
 ```r
 library(tidyverse)
@@ -26,9 +26,7 @@ wedding_matrix <- read_csv("wedding_seating_chart.csv")
 ```
 
 ```r
-# 1s indicate
-# the guest is at the current table and 0s indicate they are not. The model will seat one table at a time
-# and iterate until all the tables are filled
+# 1s indicate the guest is at the current table and 0s indicate they are not. The model will seat one table at a time and iterate until all the tables are filled
 
 ### Define Fitness Function
 
@@ -71,7 +69,7 @@ evalFunc <- function(x) {
   
 }
 
-### Iteratively seat Tables###
+### Iteratively Seat Tables###
 
 #Initialze interations to 300
 iters = 300
@@ -93,7 +91,7 @@ for (i in 1:8) {
   ga.model <- rbga.bin(size = size, popSize = 200, evalFunc = evalFunc, iters = iters, elitism = TRUE)
   
   #Best Solution
-  solution <-ga.model$population[which.min(ga.model$evaluations),]
+  solution <- ga.model$population[which.min(ga.model$evaluations),]
   
   # Print Which Table we are on, The closeness, and how many people are at each table to keep track
   print(i)
@@ -134,16 +132,16 @@ Eight = Seating_Order[71:80]
 Nine = as.character(weddingd_matrix$X)
 ```
 
-Combine tables into fineal dataframe
+Combine tables into final dataframe
 
 ```r
 seating_chart <- as.data.frame(bind_rows(One, Two, Three, Four, Five, Six, Seven, Eight, Nine))
 
 #Save Completed Seating Chart in csv
-write_csv(Chart, "Wedding_Seating_Chart.csv")
+write_csv(seating_chart, "Wedding_Seating_Chart.csv")
 ```
 
-The final seating chart solution had only a few minor tweaks made by my bride but saved me from the strenuous process of deciding where each individual should sit and I also found a way to include R in my wedding. Also, the wedding was a blast!
+The final seating chart solution had only a few minor tweaks made by my bride but saved me from the strenuous process of deciding where each individual should sit and I also found a way to include R. Also, the wedding was a blast!
 
 [![wife]({{ site.url }}/img/pic2.jpg)]({{ site.url }}/img/pic2.jpg)
-Figure 2 My Beautiful Wife and I
+Figure 2. My Beautiful Wife and I
