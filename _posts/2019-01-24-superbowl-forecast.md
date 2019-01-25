@@ -105,7 +105,7 @@ SB %>%
        y = "Sale Price")
 ```
 
-[![three]({{ site.url }}/img/revenue_sold_2.png)]({{ site.url }}/img/revenue_sold_2.png)
+[![revenuesold]({{ site.url }}/img/revenue_sold_3.png)]({{ site.url }}/img/revenue_sold_3.png)
 Figure 2.2 Revenue Sold
 
 There is a strong uptick trend at the two weeks out from the game mark for both metrics which intuitively makes sense that has more 
@@ -394,12 +394,14 @@ idx_future <- idx %>%
 idx_future
 ```
 
-## # A tibble: 1 x 12
-##   n.obs start      end        units scale tzone diff.minimum diff.q1
-##   <int> <date>     <date>     <chr> <chr> <chr>        <dbl>   <dbl>
-## 1   524 2012-09-30 2018-02-04 days  day   UTC          86400   86400
-## # ... with 4 more variables: diff.median <dbl>, diff.mean <dbl>,
-## #   diff.q3 <dbl>, diff.maximum <dbl>
+```r
+    ## # A tibble: 1 x 12
+    ##   n.obs start      end        units scale tzone diff.minimum diff.q1
+    ##   <int> <date>     <date>     <chr> <chr> <chr>        <dbl>   <dbl>
+    ## 1   524 2012-09-30 2018-02-04 days  day   UTC          86400   86400
+    ## # ... with 4 more variables: diff.median <dbl>, diff.mean <dbl>,
+    ## #   diff.q3 <dbl>, diff.maximum <dbl>
+```
 
 We need to account for the irregular data because we are missing dates due to no past sales and the mean difference does not equal 86400
 or 1 day.
