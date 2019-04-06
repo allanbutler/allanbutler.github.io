@@ -4,5 +4,5 @@ title: About me
 subtitle:
 ---
 
-My name is Allan Butler. I am a Data Scientist living in Houston, TX. I enjoy public transportation, long walks to the fridge, and the statistical programming language R.
+My name is Allan Butler. I do/am a Data Scientist living in Houston, TX. I work mostly in R, Spark, SQL, and Python. I enjoy public transportation, long walks to the fridge, and building end-to-end data solutions.
 
