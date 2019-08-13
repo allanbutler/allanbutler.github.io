@@ -96,7 +96,7 @@ geom_line() +
 labs(x = "Batting average", color = "")
 ```
 
-[![bigg_altuve]({{ site.url }}/img/unnamed-chunk-4-1.png)]({{ site.url }}/img/unnamed-chunk-4-1.png)
+[![bigg_altuve]({{ site.url }}/img/unnamed-chunk-4-1.png)]({{ site.url }}/img/unnamed-chunk_4-1.png)
 
 This posterior is a probalistic representations of our uncertainty in each estimate. When we ask what is the probability Altuve is better, we are asking "if I drew a random draw from Altuve's batting record and a random draw from Biggio's, what is the probability Altuve is higher"? Notice how Biggio's and Atluve's distribution overlap near the .290 range. Although by examing the distribution there is NOT enough uncertainty in each of the estimates to determine that Biggio could be a better hitter than Altuve at the current year statistics in 2014. If we took a random draw from Biggio's distribution from Altuve's, its very unlikely Biggio would be higher.
 
@@ -112,7 +112,7 @@ geom_line() +
 labs(x = "Batting average", color = "")
 ```
 
-[![bagwell]({{ site.url }}/img/unnamed-chunk-5-1.png)]({{ site.url }}/img/unnamed-chunk-5-1.png)
+[![bagwell]({{ site.url }}/img/unnamed-chunk-5-1.png)]({{ site.url }}/img/unnamed-chunk_5-1.png)
 
 Jeff Bagwell won a Silver Slugger Award in 1994 and had an excellent batting record. Notice the vast amount of overlap in Bagwell and Altuve's distributions. This means there is enough uncertainty in the estimates that Bagwell could easily be a better batter than Altuve.
 
@@ -152,7 +152,7 @@ A much lower probability of 10% that Bagwell is a better batter than Altuve. You
 
 These two posteriors have their own independent distribution, and together they form a joing distribution - a density over particular pairs of *x* and *y*. The joint distribution could be imagined as a density cloud:
 
-[![posterior]({{ site.url }}/img/unnamed-chunk-8-1.png)]({{ site.url }}/img/unnamed-chunk-8-1.png)
+[![posterior]({{ site.url }}/img/unnamed-chunk-8-1.png)]({{ site.url }}/img/unnamed-chunk_8-1.png)
 
 ```r
 library(tidyr)
