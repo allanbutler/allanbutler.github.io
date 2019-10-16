@@ -205,7 +205,7 @@ leaflet(salesByLocation) %>%
 ```
 
 [![six]({{ site.url }}/img/leaflet_sb.PNG)]({{ site.url }}/img/leaflet_sb.PNG)
-Figure 5 Leaflet of past superbowl sales. Yes, I had issues embedding the java in the webpage.
+Figure 5 Leaflet Map of past superbowl sales.
 
 Larger circles relate to higher sales, and smaller circles relate to lower sales. `leaflet` provides interactivety by being able to 
 click on the markers. The geographic trends are consistent with the sales over time charts. 
