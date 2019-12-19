@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Puppy Training w/ Data Science
+title: Puppy Training w/ Machine Learning
 image: img/IMG_0264.jpg
 tags: [r, tidyverse, rstats, tidyquant, lime, caret, broom]
 ---
