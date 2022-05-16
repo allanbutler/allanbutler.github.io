@@ -151,9 +151,9 @@ year_x	name	gender_x	count_x	year_y	gender_y	count_y	growth
 find_name("Hayden")
 ```
 
-| year_x |  name  |der_x | count_x | year_y | gender_y | count_y | growth |
-|--------|-------------------|--|--------|----------|---------|--------|
-| 2010   | Hayden | M    |   4191  | 2020  | M   | 2146  | -0.48795 |
+| year_x |  name  | gender_x | count_x | year_y | gender_y | count_y |  growth  |
+|--------|--------|----------|---------|--------|----------|---------|----------|
+| 2010   | Hayden |    M     |   4191  | 2020   |    M     | 2146    | -0.48795 |
 
 #### Plot Most Trendy Names
 
