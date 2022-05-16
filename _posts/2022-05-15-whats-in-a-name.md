@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Whats In A Name?
-image: img/baby.jpg
+image: img/baby.JPG
 tags: [python, realpython, pandas]
 ---
 
@@ -279,4 +279,4 @@ As you might imagine, this is not the end of finding a baby name. Some open ques
 - What if a trendy name is something we want?
 - Looking into both gender names to create a metric that finds the optimal gender neutral name.
 
-[![three]({{ site.url }}/img/baby_.jpg)]({{ site.url }}/img/baby_.jpg)
+[![three]({{ site.url }}/img/baby_.JPG)]({{ site.url }}/img/baby_.JPG)
