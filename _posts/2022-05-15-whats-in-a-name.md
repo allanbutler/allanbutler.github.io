@@ -261,6 +261,9 @@ Lets use our function `when_most_births` to plot what names we want to examine f
 when_most_births("Jase")
 ```
 
+[![spike]({{ site.url }}/img/spike_name.jpg)]({{ site.url }}/img/spike_name.jpg)
+Figure 1.3 Spike-Fall Over Time.
+
 ```
 Name Jase was most popular in 2013 with 4552 kids given this name.
 
