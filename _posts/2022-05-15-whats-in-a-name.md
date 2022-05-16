@@ -2,7 +2,7 @@
 layout: post
 title: Whats In A Name?
 image: img/baby.JPG
-tags: [python, realpython, pandas]
+tags: [python, realpython, pandas, plotly]
 ---
 
 ### What Is In A Baby Name?
@@ -42,7 +42,8 @@ df_m_sum = df_m.groupby('name')['count'].agg(['sum', 'max'], as_index=False)
 
 df_m_sum.nlargest(5, ['sum'])
 ```
-| name    | sum    |  max   |
+
+| name    |  sum   |  max   |
 |---------|--------|--------|
 | Noah    | 201245 | 19650  |
 | Liam    | 193376 | 20555  |
