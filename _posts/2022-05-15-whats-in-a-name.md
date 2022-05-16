@@ -284,6 +284,6 @@ As you might imagine, this is not the end of finding a baby name. Some open ques
 Further analysis can look into both gender names to create a metric that finds the optimal gender neutral name.
 
 We solved the initial problem of avoiding specific names but the question of interest is still left open-ended.
-Luckily we have 6 months remaining to come up with a name. 
+Luckily we have 6 months remaining to decide on a name. 
 
 [![three]({{ site.url }}/img/baby_.JPG)]({{ site.url }}/img/baby_.JPG)
