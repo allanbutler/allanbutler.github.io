@@ -74,44 +74,37 @@ df_yoy["growth"] = (df_yoy["count_y"] - df_yoy["count_x"])/(df_yoy["count_x"])
 df_yoy.nlargest(10, ['growth'])
 ```
 
-| year_x |	name	 | gender_x	| count_x	| year_y	| gender_y	| count_y	| growth
-|--------|-----------------|---------|
-|	2010	Liam	M	10928	2020	M	19659	0.798957
-|6	2010	Henry	M	6399	2020	M	10705	0.672918
-|9	2010	Levi	M	6016	2020	M	9005	0.496842
-|7	2010	Sebastian	M	6361	2020	M	8927	0.403396
-|6	2010	Josiah	M	5206	2020	M	6077	0.167307
-|	2010	Noah	M	16460	2020	M	18252	0.108870
-|6	2010	Wyatt	M	7374	2020	M	8135	0.103200
-|4	2010	Lucas	M	10379	2020	M	11281	0.086906
-|6	2010	Owen	M	8176	2020	M	8623	0.054672
-|4	2010	Jack	M	8519	2020	M	8876	0.041906
-| oah    | 201245 | 19650  |
-| Liam    | 193376 | 20555  |
-| William | 172238 | 17347  |
-| Jacob   | 172154 | 22139  |
-| Mason   | 167681 | 19518  |
-| Noah    | 201245 | 19650  |
-| Liam    | 193376 | 20555  |
-| William | 172238 | 17347  |
-| Jacob   | 172154 | 22139  |
-| Mason   | 167681 | 19518  |
+```
+year_x	name	gender_x	count_x	year_y	gender_y	count_y	growth
+2010	Liam	M	10928	2020	M	19659	0.798957
+2010	Henry	M	6399	2020	M	10705	0.672918
+2010	Levi	M	6016	2020	M	9005	0.496842
+2010	Sebastian	M	6361	2020	M	8927	0.403396
+2010	Josiah	M	5206	2020	M	6077	0.167307
+2010	Noah	M	16460	2020	M	18252	0.108870
+2010	Wyatt	M	7374	2020	M	8135	0.103200
+2010	Lucas	M	10379	2020	M	11281	0.086906
+2010	Owen	M	8176	2020	M	8623	0.054672
+2010	Jack	M	8519	2020	M	8876	0.041906
+```
 
 ```python
 df_yoy.nsmallest(10, ['growth'])
 ```
-| year_x |	name	 | gender_x	| count_x	| year_y	| gender_y	| count_y	| growth
-|--------|-----------------|---------|
-33	2010	Tyler	M	10450	2020	M	2771	-0.734833
-37	2010	Gavin	M	9619	2020	M	2570	-0.732820
-43	2010	Brandon	M	8547	2020	M	2287	-0.732421
-49	2010	Justin	M	7848	2020	M	2277	-0.709862
-57	2010	Kevin	M	7324	2020	M	2359	-0.677908
-35	2010	Evan	M	9730	2020	M	3389	-0.651696
-39	2010	Brayden	M	9113	2020	M	3253	-0.643037
-60	2010	Zachary	M	7180	2020	M	2698	-0.624234
-10	2010	Joshua	M	15448	2020	M	5924	-0.616520
-3	2010	Jayden	M	17189	2020	M	7102	-0.586829
+
+```
+year_x	name	gender_x	count_x	year_y	gender_y	count_y	growth
+2010	Tyler	M	10450	2020	M	2771	-0.734833
+2010	Gavin	M	9619	2020	M	2570	-0.732820
+2010	Brandon	M	8547	2020	M	2287	-0.732421
+2010	Justin	M	7848	2020	M	2277	-0.709862
+2010	Kevin	M	7324	2020	M	2359	-0.677908
+2010	Evan	M	9730	2020	M	3389	-0.651696
+2010	Brayden	M	9113	2020	M	3253	-0.643037
+2010	Zachary	M	7180	2020	M	2698	-0.624234
+2010	Joshua	M	15448	2020	M	5924	-0.616520
+2010	Jayden	M	17189	2020	M	7102	-0.586829
+```
 
 Quick look at the top 10 largest & smallest growing names over the 10 year span tells us that Liam is the fastest growing and Tyler is the name that is shrinking 
 the most. I've filtered the dataset to include only names with over 5000 counts beginning in the year 2010.
@@ -142,16 +135,17 @@ search = ['Allan', 'Paxton', 'Parker', 'Ethan', 'George', 'Dee', 'Hayden', 'Enzo
 find_list(search)
 ```
 
-| year_x |	name	 | gender_x	| count_x	| year_y	| gender_y	| count_y	| growth
-|--------|-----------------|---------|
-445	2010	Enzo	M	602	2020	M	2201	2.656146
-9453	2010	Dee	M	5	2020	M	6	0.200000
-295	2010	Paxton	M	1110	2020	M	1286	0.158559
-164	2010	George	M	2373	2020	M	2746	0.157185
-84	2010	Parker	M	4732	2020	M	3797	-0.197591
-613	2010	Allan	M	403	2020	M	277	-0.312655
-1	2010	Ethan	M	18006	2020	M	9464	-0.474397
-95	2010	Hayden	M	4191	2020	M	2146	-0.487950
+```
+year_x	name	gender_x	count_x	year_y	gender_y	count_y	growth
+2010	Enzo	M	602	2020	M	2201	2.656146
+2010	Dee	M	5	2020	M	6	0.200000
+2010	Paxton	M	1110	2020	M	1286	0.158559
+2010	George	M	2373	2020	M	2746	0.157185
+2010	Parker	M	4732	2020	M	3797	-0.197591
+2010	Allan	M	403	2020	M	277	-0.312655
+2010	Ethan	M	18006	2020	M	9464	-0.474397
+2010	Hayden	M	4191	2020	M	2146	-0.487950
+```
 
 ```python
 find_name("Hayden")
