@@ -43,7 +43,7 @@ df_m_sum = df_m.groupby('name')['count'].agg(['sum', 'max'], as_index=False)
 df_m_sum.nlargest(5, ['sum'])
 ```
 | name    | sum    |  max   |
-|---------|-----------------|
+|---------|--------|--------|
 | Noah    | 201245 | 19650  |
 | Liam    | 193376 | 20555  |
 | William | 172238 | 17347  |
