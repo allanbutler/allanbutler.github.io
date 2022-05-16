@@ -42,7 +42,7 @@ df_m_sum = df_m.groupby('name')['count'].agg(['sum', 'max'], as_index=False)
 
 df_m_sum.nlargest(5, ['sum'])
 ```
-| name    | sum     | max   |
+| name    | sum    |  max   |
 |---------|-----------------|
 | Noah    | 201245 | 19650  |
 | Liam    | 193376 | 20555  |
@@ -79,7 +79,7 @@ year_x	name	gender_x	count_x	year_y	gender_y	count_y	growth
 2010	Liam	M	10928	2020	M	19659	0.798957
 2010	Henry	M	6399	2020	M	10705	0.672918
 2010	Levi	M	6016	2020	M	9005	0.496842
-2010	Sebastian	M	6361	2020	M	8927	0.403396
+2010	Sebasti	M	6361	2020	M	8927	0.403396
 2010	Josiah	M	5206	2020	M	6077	0.167307
 2010	Noah	M	16460	2020	M	18252	0.108870
 2010	Wyatt	M	7374	2020	M	8135	0.103200
