@@ -8,8 +8,8 @@ tags: [python, realpython, pandas]
 ### What Is In A Baby Name?
 
 Becoming a first time parent is a daunting task in an invidiuals life. From the many [baby books](https://www.amazon.com/Baby-Book/s?k=Baby+Book) to all the gadgets 
-(hot take: you don't need all the gadgets) you need to purchase for the individual that will soon become your new roomy. With all the chaos that will soon come in 
-those 9 short months one of the most challenging can be coming up with a name. Using the Social Security Card Application Baby Names from 2010 - 2020 I used a data 
+(hot take: you don't need all the gadgets) you need to purchase for the individual that will soon become your new roomy. With all the chaos that will come soon in 
+those 9 short months, one of the most challenging can be coming up with a name. Using the Social Security Card Application Baby Names from 2010 - 2020 I used a data 
 approach to try and solve this problem.
 
 We want to pick a name that is not the most popular and/or a passing trend, unique enough for our family tree, and true to our families culture.
@@ -17,7 +17,7 @@ We want to pick a name that is not the most popular and/or a passing trend, uniq
 #### Approach is as follow:
 - Complete simple counts to examine overall most/least popular
 - Year-over-year differences of popularity values.
-- Find names that have sudden spike & then drop off, proxy for trendy names.
+- Find names that have sudden spikes & then drop off, proxy for trendy names.
 
 ```python
 import matplotlib.pyplot as plt
@@ -106,7 +106,7 @@ year_x	name	gender_x	count_x	year_y	gender_y	count_y	growth
 2010	Jayden	M	17189	2020	M	7102	-0.586829
 ```
 
-Quick look at the top 10 largest & smallest growing names over the 10 year span tells us that Liam is the fastest growing and Tyler is the name that is shrinking 
+A quick look at the top 10 largest & smallest growing names over the 10 year span tells us that Liam is the fastest growing and Tyler is the name that is shrinking 
 the most. I've filtered the dataset to include only names with over 5000 counts beginning in the year 2010.
 
 ```python
@@ -157,12 +157,12 @@ find_name("Hayden")
 
 #### Plot Most Trendy Names
 
-Plotting the overall growth is a useful exercise but lets break that calculation out by each year to get a better sense of the growth grend.
+Plotting the overall growth gives us some insights but lets break that calculation out by each year to get a better sense of the growth grend.
 
-```python
-# Lets observe how all-time most popular names have grown over the years instead of just observing the 10 year growth. We can accomplish this by first creating a 
+Lets observe how all-time most popular names have grown over the years instead of just observing the 10 year growth. We can accomplish this by first creating a 
 pivot df.
 
+```python
 pivot_df = df_m.pivot_table(index="name", columns="year", values="count", aggfunc=np.sum).fillna(0)
 
 # Now we calucalte the percentage of each name by year.
@@ -172,12 +172,15 @@ perc_df = pivot_df / pivot_df.sum() * 100
 # Then add a new column with the cumulative percentages sum.
 perc_df["total"] = perc_df.sum(axis=1)
 
-# We sort the datframe to check which are the top values and slice. Lastly, we drop the `total` column and flix the axes to make plotting the data easier.
 sort_df = perc_df.sort_values(by="total", ascending=False).drop("total", axis=1)[0:10]
 
 transpose_df = sort_df.transpose()
 transpose_df.head(5)
 ```
+
+We sort the datframe to check which are the top values and slice the data appropriately. 
+Lastly, we drop the `total` column and flip the axes to make plotting the data easier.
+
 ```
 name	Noah	  Liam William Jacob  Mason Ethan Michael James Alexander Elijah
 year	
@@ -188,7 +191,7 @@ year
 2014	1.007213	0.962950	0.877551	0.880575	0.897154	0.820202	0.806594	0.752946	0.804352	0.722134
 ```
 
-Plotly is great python package for the type of data we have above because we can pass the index references directly as arguments.
+Plotly is a great python package for the type of data we have above because we can pass the index references directly as arguments.
 
 ```python
 import plotly.express as px
@@ -202,7 +205,7 @@ Figure 1.1 Trendy Baby Names Over Time.
 
 Liam is still the most 'trendy' & popular name, according to growth, over the last 10 years.
 
-I'm going to create another function to grab the year that the name of interest was the highest.
+I'm going to create another function to grab the year where the name of interest is the highest.
 
 ```python
 def when_most_births(name):
@@ -237,7 +240,7 @@ Figure 1.2 Most Popular Over Time.
 
 Using a function from a [kaggle notebooke](https://www.kaggle.com/code/dvasyukova/persistent-vs-spike-fade-names/notebook?scriptVersionId=0) we will
 
-#### Create a metric that measure spikes & then drops off.
+#### Create a metric that measure spikes & then has a drop off.
 - Divide a names maximum count by its total count.
 
 #### Most Sudden Names
@@ -277,6 +280,10 @@ In 2020 there were 624 babies in total who were given the name Jase.
 As you might imagine, this is not the end of finding a baby name. Some open quesitons are:
 - How do I actually use this data to choose a name and not just use the analysis for avoiding names?
 - What if a trendy name is something we want?
-- Looking into both gender names to create a metric that finds the optimal gender neutral name.
+
+Further analysis can look into both gender names to create a metric that finds the optimal gender neutral name.
+
+We solved the initial problem of avoiding specific names but the question of interest is still left open-ended.
+Luckily we have 6 months remaining to come up with a name. 
 
 [![three]({{ site.url }}/img/baby_.JPG)]({{ site.url }}/img/baby_.JPG)
