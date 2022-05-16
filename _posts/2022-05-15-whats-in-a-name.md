@@ -43,6 +43,7 @@ df_m_sum = df_m.groupby('name')['count'].agg(['sum', 'max'], as_index=False)
 df_m_sum.nlargest(5, ['sum'])
 ```
 
+```
 | name    |  sum   |  max   |
 |---------|--------|--------|
 | Noah    | 201245 | 19650  |
@@ -50,6 +51,7 @@ df_m_sum.nlargest(5, ['sum'])
 | William | 172238 | 17347  |
 | Jacob   | 172154 | 22139  |
 | Mason   | 167681 | 19518  |
+```
 
 Next lets examine fastest growing names from 2010 - 2020. We do this by creating two separate dataframes and then use the `merge` function in pandas to join and 
 calculate the growth column. `(latest_year - first_year)/(latest_year) * 100`
