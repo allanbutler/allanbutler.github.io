@@ -197,7 +197,7 @@ plot = px.line(transpose_df, x=transpose_df.index, y=transpose_df.columns, title
 plot.show()
 ```
 
-[![one]({{ site.url }}/img/trendy_plot.png)]({{ site.url }}/img/trendy_plot.png)
+[![one]({{ site.url }}/img/trendy_plot.jpg)]({{ site.url }}/img/trendy_plot.jpg)
 Figure 1.1 Trendy Baby Names Over Time.
 
 Liam is still the most 'trendy' & popular name, according to growth, over the last 10 years.
@@ -232,7 +232,7 @@ Name Enzo was most popular in 2020 with 2201 kids given this name.
 In 2020 there were 2201 babies in total who were given the name Enzo.
 ```
 
-[![two]({{ site.url }}/img/most_popular.png)]({{ site.url }}/img/most_popular.png)
+[![two]({{ site.url }}/img/most_popular.jpg)]({{ site.url }}/img/most_popular.jpg)
 Figure 1.2 Most Popular Over Time.
 
 Using a function from a [kaggle notebooke](https://www.kaggle.com/code/dvasyukova/persistent-vs-spike-fade-names/notebook?scriptVersionId=0) we will
@@ -275,3 +275,5 @@ As you might imagine, this is not the end of finding a baby name. Some open ques
 - How do I actually use this data to choose a name and not just use the analysis for avoiding names?
 - What if a trendy name is something we want?
 - Looking into both gender names to create a metric that finds the optimal gender neutral name.
+
+[![three]({{ site.url }}/img/baby_.jpg)]({{ site.url }}/img/baby_.jpg)
