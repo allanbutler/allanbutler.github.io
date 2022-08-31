@@ -138,6 +138,15 @@ defaults:
     values:
       layout: "page"
       show-avatar: true
+      
+# Collections
+collections:
+  food:
+    output: true
+  data_science:
+    output: true
+  travel:
+    output: true
 
 # Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
 link-tags: false
