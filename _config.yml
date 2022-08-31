@@ -23,6 +23,10 @@ description: Welcome to my personal website!
 
 # List of links in the navigation bar
 navbar-links:
+  Topics:
+    - Data Science: ""
+    - Travel: ""
+    - Food: ""
   About Me: "aboutme"
   Author's home: "https://allanbutler.github.io/"
 
@@ -41,19 +45,19 @@ avatar: "/img/web_pic.jpg"
 author:
   name: Allan Butler
   email: "youremail@domain.com"
-  facebook: yourname  # eg. daattali
+  # facebook: yourname  # eg. daattali
   github: allanbutler    # eg. daattali
   twitter: AllanDButler   # eg. daattali
-  reddit: yourname    # eg. daattali
-  google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
+  # reddit: yourname    # eg. daattali
+  # google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
   linkedin: allanbutler1/  # eg. daattali
-  xing: yourname      # eg. daattali
+  # xing: yourname      # eg. daattali
   stackoverflow: yourlink  # eg. "3943160/daattali"
-  snapchat: yourname  # eg. daattali
-  instagram: yourname # eg. daattali
+  # snapchat: yourname  # eg. daattali
+  instagram: theallanbutler # eg. daattali
   youtube: yourlink   # eg. user/daattali or channel/daattali
   spotify: yourname   # eg. daattali
-  telephone: yourphone   # eg. +14159998888
+  # telephone: yourphone   # eg. +14159998888
 
 # Select which links to show in the footer
 footer-links-active:
@@ -76,6 +80,7 @@ footer-links-active:
 # Select which share links to show in posts
 share-links-active:
   twitter: true
+  instagram: true
   facebook: true
   google: false
   linkedin: true
