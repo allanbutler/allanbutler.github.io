@@ -1,7 +1,6 @@
 ---
 title: Shakshuka
-layout: page
-image_path: img/stove_shakshuka.JPG
+layout: cookie
 description: Shakshuka is a delicious breakfast food.
 link: https://allanbutler.github.io/food/
 ---
