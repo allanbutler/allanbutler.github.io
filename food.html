@@ -8,6 +8,7 @@ image_path: img/stove_shakshuka.JPG
 {% for food in site.foods %}
 	<div class="food">
 		<h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
+		{{ food.content  }}
 	</div>
 {% endfor %}
 
