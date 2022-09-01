@@ -1,7 +1,7 @@
 ---
 title: Shakshuka
 layout: food
-description: Shakshuka is a delicious breakfast food.
+authors: Allan Butler
 link: https://allanbutler.github.io/food/
 ---
 
