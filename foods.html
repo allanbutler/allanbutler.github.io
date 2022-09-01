@@ -1,23 +1,37 @@
 ---
-layout: page
-title: "A List of Food Recipes"
+layout: default
+title: Food Recipes
 permalink: "/food/"
 img: img/chef.jpg
 ---
 
-<!-- {% for food in site.foods %}
-  <div class="food">
-    <h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
-  </div>
-{% endfor %} -->
-
-<h1 class="mt-4">Foods</h1>
+<!-- <h1 class="mt-4">Foods</h1>
 {% assign foods = site.foods | sort: 'title' %}
 {% for food in site.foods %}
   <div class="food">
     <h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
     <h2><img src="{{ food.image_path }}" alt="{{ food.title }}">{{ food.title }}</a></h2>
 <!--     {{ food.content }} -->
+<!--   </div>
+{% endfor %} --> -->
+
+<h1 class="mt-4">Food Recipes</h1>
+{% assign foods = site.foods | sort: "title" %}
+{% for food in foods %}
+<div class="pubitem">
+  <div class="pubteaser">
+    <a href="{{pub.url}}">
+      <img src="/images/{{ pub.slug }}_small.jpp" alt="{{pub.slug}} food teaser"/>
+    </a>
   </div>
+  <div class="pubtitle">
+    {{ food.title }}
+  </div>
+  <div class="pubauthors">
+    {{ pub.authors }}
+  <div class="publinks">
+    <a href="{{pub.url}}"><i class="fas fa-arrow-right"></i> Project Page</a>
+  </div>
+</div>
 {% endfor %}
 
