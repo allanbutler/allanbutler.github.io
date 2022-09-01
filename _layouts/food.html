@@ -1,37 +1,11 @@
 ---
-layout: default
+layout: page
 ---
 
-<!-- <div class="food">
+<div class="food">
   <h2><img src="{{ page.image_path }}" alt="page.title" />{{ page.title }}</h2>
 
   <div class="blog-post spacing">
     {{ content }}
   </div>
-</div> -->
-
-<div class="page">
-
-  <h1 class="mt-4 food-title">{{ page.title }}</h1>
-
-  <div class="food-authors">
-    {{ page.authors }}
-  </div>
-
-  <div class="food-info">
-    {{ page.food }}, {{ page.year}}
-  </div>
-
-  <div class="food-teaser">
-    <img src="/images/{{ page.slug }}.jpg" alt="food teaser"/>
-  </div>
-
-  {{ content }}
-
-  <h2 id="downloads">Downloads</h2>
-  <p>
-    {% if page.doi %}
-    <a href="{{ page.doi }}"><i class="fas fa-external-link-alt"></i> DOI</a>&nbsp;&nbsp;
-    {% endif %}
-  </p>
 </div>
