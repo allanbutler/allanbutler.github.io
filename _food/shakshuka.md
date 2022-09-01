@@ -33,6 +33,7 @@ This recipe makes _ shakshuka .
 * [Toasted bread, for dipping](https://www.heb.com/product-detail/h-e-b-bakery-french-bread-scratch-made-16-oz/1106931)
 
 [![shakshuka_stove]({{ site.url }}/img/stove_shakshuka.JPG)]({{ site.url }}/img/stove_shakshuka.JPG)
+
 Figure 1.1 Shakshuka fresh off the stove.
 
 ## Directions
@@ -46,6 +47,7 @@ Figure 1.1 Shakshuka fresh off the stove.
 4. Season with salt and pepper to taste and lastly add the feta, parsley, avocado, if using. Serve with toasted bread for scooping.
 
 [![shakshuka]({{ site.url }}/img/table_shakshuka.JPG)]({{ site.url }}/img/table_shakshuka.JPG)
+
 Figure 1.2 Finished Shakshuka. Remember everything taste better with Dog hair in it.
 
 [**Back to Recipes**]({{page.link}})
