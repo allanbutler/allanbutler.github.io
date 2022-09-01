@@ -5,18 +5,17 @@ permalink: "/food/"
 image_path: img/chef.jpg
 ---
 
-<!-- {% for food in site.food %}
-	<div class="food">
-		<h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
-		{{ food.content  }}
-	</div>
-{% endfor %} -->
-
 {% for food in site.foods %}
+  <div class="food">
+    <h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
+  </div>
+{% endfor %}
+
+<!-- {% for food in site.foods %}
   <div class="food">
     <h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
     <h2><img src="{{ food.image_path }}" alt="{{ food.title }}">{{ food.title }}</a></h2>
     {{ food.content }}
   </div>
-{% endfor %}
+{% endfor %} -->
 
