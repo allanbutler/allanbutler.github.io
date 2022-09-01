@@ -1,6 +1,7 @@
 ---
 title: Shakshuka
-layout: food
+layout: collection
+collection: food
 authors: Allan Butler
 link: https://allanbutler.github.io/food/
 ---
