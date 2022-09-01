@@ -1,7 +1,6 @@
 ---
 title: Travel_test
-layout: post
-image_path: img/stove_shakshuka.JPG
+layout: travel
 description: Shakshuka is a delicious breakfast food.
 link: https://allanbutler.github.io/travel/
 ---
