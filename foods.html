@@ -1,35 +1,27 @@
 ---
 layout: default
 title: Food Recipes
-permalink: "/food/"
 img: img/chef.jpg
 ---
 
-<!-- <h1 class="mt-4">Foods</h1>
-{% assign foods = site.foods | sort: 'title' %}
-{% for food in site.foods %}
-  <div class="food">
-    <h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
-    <h2><img src="{{ food.image_path }}" alt="{{ food.title }}">{{ food.title }}</a></h2>
-<!--     {{ food.content }} -->
-<!--   </div>
-{% endfor %} --> -->
-
-<h1 class="mt-4">Food Recipes</h1>
-{% assign foods = site.foods | sort: "title" %}
-{% for food in foods %}
+<h1 class="mt-4">Food</h1>
+{% assign travel = site.food | sort: "year" %}
+{% for pub in travel %}
 <div class="pubitem">
   <div class="pubteaser">
     <a href="{{pub.url}}">
-      <img src="/images/{{ pub.slug }}_small.jpp" alt="{{pub.slug}} food teaser"/>
+      <img src="/images/{{ pub.slug }}_small.png" alt="{{pub.slug}} food teaser"/>
     </a>
   </div>
   <div class="pubtitle">
-    {{ food.title }}
+    {{ pub.title }}
   </div>
-  <div class="pubauthors">
-    {{ pub.authors }}
+  </div>
+  <div class="pubinfo">
+    {{ pub.food }}, {{ pub.year}}
+  </div>
   <div class="publinks">
+    <a href="/download/{{ pub.slug}}.pdf"><i class="far fa-file-pdf"></i> PDF</a>&nbsp;&nbsp;
     <a href="{{pub.url}}"><i class="fas fa-arrow-right"></i> Project Page</a>
   </div>
 </div>
