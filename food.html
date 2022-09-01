@@ -2,21 +2,21 @@
 layout: page
 title: "A List of Food Recipes"
 permalink: "/food/"
-image_path: img/stove_shakshuka.JPG
+image_path: img/chef.JPG
 ---
 
-{% for food in site.foods %}
+<!-- {% for food in site.food %}
 	<div class="food">
 		<h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
 		{{ food.content  }}
 	</div>
-{% endfor %}
+{% endfor %} -->
 
-<!-- {% for foods in site.food %}
+{% for food in site.food %}
   <div class="food">
     <h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
     <h2><img src="{{ food.image_path }}" alt="{{ food.title }}">{{ food.title }}</a></h2>
     {{ food.content }}
   </div>
 {% endfor %}
- -->
+
