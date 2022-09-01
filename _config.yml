@@ -23,10 +23,9 @@ description: Welcome to my personal website!
 
 # List of links in the navigation bar
 navbar-links:
-  Lifestyle:
-    - Data Science: ""
-    - Travel: "travel"
-    - Food: "food"
+  Data Science: ""
+  Travel: "travel"
+  Food: "food"
   About Me: "aboutme"
   Author's home: "https://allanbutler.github.io/"
 
