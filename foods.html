@@ -6,7 +6,7 @@ img: img/chef.jpg
 
 <h1 class="mt-4">Food</h1>
 {% assign travel = site.food | sort: "year" %}
-{% for pub in travel %}
+{% for pub in food %}
 <div class="pubitem">
   <div class="pubteaser">
     <a href="{{pub.url}}">
