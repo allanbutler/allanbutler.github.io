@@ -1,7 +1,7 @@
 ---
 title: Shakshuka
 layout: post
-img: img/shakshuka.JPG
+image_path: img/shakshuka.JPG
 description: Shakshuka is a delicious breakfast food.
 link: https://allanbutler.github.io/food/
 ---
