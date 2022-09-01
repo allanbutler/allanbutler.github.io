@@ -1,6 +1,6 @@
 ---
 title: Shakshuka
-layout: cookie
+layout: food
 description: Shakshuka is a delicious breakfast food.
 link: https://allanbutler.github.io/food/
 ---
@@ -17,4 +17,4 @@ Since the theme is based on default Jekyll theme, it is very lightweight. No Jav
 
 [![shakshuka]({{ site.url }}/img/table_shakshuka.JPG)]({{ site.url }}/img/table_shakshuka.JPG)
 
-[**Preview**]({{page.link}})
+[**Back to Recipes**]({{page.link}})
