@@ -17,4 +17,4 @@ Since the theme is based on default Jekyll theme, it is very lightweight. No Jav
 
 [![shakshuka]({{ site.url }}/img/table_shakshuka.JPG)]({{ site.url }}/img/table_shakshuka.JPG)
 
-[**Preview**]({{page.link}})
+[**Back to Recipes**]({{page.link}})
