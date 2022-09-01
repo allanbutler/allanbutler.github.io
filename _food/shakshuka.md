@@ -1,10 +1,24 @@
 ---
 title: Shakshuka
 layout: food
-collection: food
 authors: Allan Butler
 link: https://allanbutler.github.io/food/
 ---
+
+Shakshuka is a _ that originated in the _ and features _ as its distinguishing ingredient.
+
+The traditional recipe combines a _. Variations include recipes with other types of _ as well as additional ingredients such as _.
+
+This recipe makes _ shakshuka .
+
+## Ingredients
+
+* 2 TBSPN of Olive Oil
+
+## Directions
+
+1. Preheat stove
+
 
 # Features
 
