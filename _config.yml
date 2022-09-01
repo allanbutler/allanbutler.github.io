@@ -142,13 +142,13 @@ defaults:
 collections:
   food:
     output: true
-    permalink: /food/:path/
+    permalink: /:collection/:path/
   data_science:
     output: true
-    permalink: /data_science/:path/
+    permalink: /:collection/:path/
   travel:
     output: true
-    permalink: /travel/:path/
+    permalink: /:collection/:path/
 
 # Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
 link-tags: false
