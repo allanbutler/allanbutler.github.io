@@ -11,6 +11,7 @@ img: img/chef.jpg
   </div>
 {% endfor %} -->
 
+{% assign foods = site.foods | sort: 'title' %}
 {% for food in site.foods %}
   <div class="food">
     <h2><a href="{{ food.url }}">{{ food.title }}</a></h2>
