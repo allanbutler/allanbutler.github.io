@@ -1,24 +1,19 @@
 ---
-layout: default
+title: Food
+layout: page
+img: img/stove_shakshuka.JPG
+description: Page for recipes.
+link: https://allanbutler.github.io/food/
 ---
-<article class="food">
 
+# Features
 
-    <img src="{{ page.picture }}" alt="Photo of a {{ page.title | downcase }}">
+## Customizable theme
 
+The theme can be customized just by changing few variables in **\_config.yml** file.
 
-  <h1>Animal Profile: {{ page.title }}</h1>
+## Lightweight
 
-  <div class="food-class {{ page.class | downcase }}">
-    {{ page.class }}
-  </div>
+Since the theme is based on default Jekyll theme, it is very lightweight. No JavaScript except analytics is used!
 
-  <div class="food-family {{ page.family | downcase }}">
-    {{ page.family }}
-  </div>
-
-  <div>
-    {{ content }}
-  </div>
-
-</article>
+[**Preview**]({{page.link}})
