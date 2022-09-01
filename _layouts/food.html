@@ -4,14 +4,11 @@ image_path: img/chef.jpg
 permalink: "/food/"
 ---
 
-{% figure %}
-![Image](/img/chef.jpg)
-{% endfigure %}
-
-{{ content }}
-
 <div class="food">
   <h2><img src="{{ page.image_path }}" alt="page.title" />{{ page.title }}</h2>
+  <a href="{{pub.url}}">
+      <img src="/images/{{ pub.slug }}_small.png" alt="{{pub.slug}} food page"/>
+    </a>
 
   <div class="blog-post spacing">
     {{ content }}
