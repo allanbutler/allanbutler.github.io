@@ -6,14 +6,10 @@ description: Page for recipes.
 link: https://allanbutler.github.io/food/
 ---
 
-# Features
+<div class="food">
+  <h2><img src="{{ page.image_path }}" alt="page.title" />{{ page.title }}</h2>
 
-## Customizable theme
-
-The theme can be customized just by changing few variables in **\_config.yml** file.
-
-## Lightweight
-
-Since the theme is based on default Jekyll theme, it is very lightweight. No JavaScript except analytics is used!
-
-[**Preview**]({{page.link}})
+  <div class="blog-post spacing">
+    {{ content }}
+  </div>
+</div>
