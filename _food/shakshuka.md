@@ -7,6 +7,10 @@ impage_path: img/stove_shakshuka.JPG
 link: https://allanbutler.github.io/food/
 ---
 
+[![shakshuka_stove]({{ site.url }}/img/stove_shakshuka.JPG)]({{ site.url }}/img/stove_shakshuka.JPG)
+
+Figure 1.1 Shakshuka fresh off the stove.
+
 Shakshuka originated as a breakfast for workers in North Africa but is now popular throughout the Middle East. Shakshuka can be enjoyed as a brunch food or even a dinner. This recipe favors a bold tomato and red pepper sauce and features a harissa or curry paste as its distinguishing ingredient.
 
 ## Tips
@@ -38,9 +42,6 @@ This meal provides around 4 servings of shakshuka.
 * [1 avacado, diced](https://www.heb.com/product-detail/fresh-hass-avocados-large-each/318627)
 * [Toasted bread, for dipping](https://www.heb.com/product-detail/h-e-b-bakery-french-bread-scratch-made-16-oz/1106931)
 
-[![shakshuka_stove]({{ site.url }}/img/stove_shakshuka.JPG)]({{ site.url }}/img/stove_shakshuka.JPG)
-
-Figure 1.1 Shakshuka fresh off the stove.
 
 ## Directions
 
