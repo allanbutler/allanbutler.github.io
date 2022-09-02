@@ -2,7 +2,7 @@
 title: Shakshuka
 layout: food
 authors: Allan Butler
-image_path: img/stove_shakshuka.jpg
+image: img/stove_shakshuka.jpg
 link: https://allanbutler.github.io/food/
 ---
 
