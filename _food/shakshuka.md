@@ -12,9 +12,9 @@ Shakshuka originated as a breakfast for workers in North Africa but is now popul
 ## Tips
 
 * A cast iron is preferred but large lidded skillet will do.
-* Adjust 
+* Adjust time on eggs based on how runny you prefer the yolk.
 
-This meal serves around 4 servings of shakshuka.
+This meal provides around 4 servings of shakshuka.
 
 [Original Recipe Source](https://www.loveandlemons.com/shakshuka-recipe/)
 
