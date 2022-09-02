@@ -5,6 +5,8 @@ authors: Allan Butler
 image: img/stove_shakshuka.JPG
 impage_path: img/stove_shakshuka.JPG
 link: https://allanbutler.github.io/food/
+thumbnail-img: /img/stove_shakshuka.JPG
+share-img: /img/stove_shakshuka.JPG
 ---
 
 [![shakshuka_stove]({{ site.url }}/img/stove_shakshuka.JPG)]({{ site.url }}/img/stove_shakshuka.JPG)
