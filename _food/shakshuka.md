@@ -2,16 +2,21 @@
 title: Shakshuka
 layout: food
 authors: Allan Butler
-image: img/stove_shakshuka.jpg
-impage_path: img/stove_shakshuka.jpg
+image: img/stove_shakshuka.JPG
+impage_path: img/stove_shakshuka.JPG
 link: https://allanbutler.github.io/food/
 ---
 
-Shakshuka is a _ that originated in the _ and features _ as its distinguishing ingredient.
+Shakshuka originated as a breakfast for workers in North Africa but is now popular throughout the Middle East. Shakshuka can be enjoyed as a brunch food or even a dinner. This recipe favors a bold tomato and red pepper sauce and features a harissa or curry paste as its distinguishing ingredient.
 
-The traditional recipe combines a _. Variations include recipes with other types of _ as well as additional ingredients such as _.
+## Tips
 
-This recipe makes _ shakshuka .
+* A cast iron is preferred but large lidded skillet will do.
+* Adjust 
+
+This meal serves around 4 servings of shakshuka.
+
+[Original Recipe Source](https://www.loveandlemons.com/shakshuka-recipe/)
 
 ## Ingredients
 
