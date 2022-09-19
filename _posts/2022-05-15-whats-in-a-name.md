@@ -7,7 +7,7 @@ tags: [python, realpython, pandas, plotly]
 
 ### What Is In A Baby Name?
 
-Becoming a first time parent is a daunting task in an invidiuals life. From the many [baby books](https://www.amazon.com/Baby-Book/s?k=Baby+Book) to all the gadgets 
+Becoming a first time parent is a daunting task in an individuals life. From the many [baby books](https://www.amazon.com/Baby-Book/s?k=Baby+Book) to all the gadgets 
 (hot take: you don't need all the gadgets) you need to purchase for the individual that will soon become your new roomy. With all the chaos that will come soon in 
 those 9 short months, one of the most challenging can be coming up with a name. Using the Social Security Card Application Baby Names from 2010 - 2020 I used a data 
 approach to try and solve this problem.
@@ -119,7 +119,7 @@ df_int = df_yoy_all[df_yoy_all["count_x"] > 1]
 df_int["growth"] = (df_int["count_y"] - df_int["count_x"])/(df_int["count_x"])
 ```
 
-Creating a function to explore any name of interest will be a valuable resuable asset.
+Creating a function to explore any name of interest will be a valuable reusable asset.
 
 ```python
 # Create function to look up any name of interest
@@ -160,7 +160,7 @@ find_name("Hayden")
 
 #### Plot Most Trendy Names
 
-Plotting the overall growth gives us some insights but lets break that calculation out by each year to get a better sense of the growth grend.
+Plotting the overall growth gives us some insights but lets break that calculation out by each year to get a better sense of the growth trend.
 
 Lets observe how all-time most popular names have grown over the years instead of just observing the 10 year growth. We can accomplish this by first creating a 
 pivot df.
@@ -181,7 +181,7 @@ transpose_df = sort_df.transpose()
 transpose_df.head(5)
 ```
 
-We sort the datframe to check which are the top values and slice the data appropriately. 
+We sort the dataframe to check which are the top values and slice the data appropriately. 
 Lastly, we drop the `total` column and flip the axes to make plotting the data easier.
 
 ```
@@ -280,7 +280,7 @@ In 2020 there were 624 babies in total who were given the name Jase.
 - Jase is a great example of the spike/fall being able to capture an exmaple of a name that peaked in 2013 and has dropped in popularity. 
 - For some high ranked spike/fall names we do not see the fade part because their peak year is the last one in the dataset.
 
-As you might imagine, this is not the end of finding a baby name. Some open quesitons are:
+As you might imagine, this is not the end of finding a baby name. Some open questions are:
 - How do I actually use this data to choose a name and not just use the analysis for avoiding names?
 - What if a trendy name is something we want?
 
