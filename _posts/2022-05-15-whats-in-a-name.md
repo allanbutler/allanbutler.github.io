@@ -277,7 +277,7 @@ In 2020 there were 624 babies in total who were given the name Jase.
 ```
 
 #### Examining The Spike-Fall Names
-- Jase is a great example of the spike/fall being able to capture an exmaple of a name that peaked in 2013 and has dropped in popularity. 
+- Jase is a great example of the spike/fall being able to capture an example of a name that peaked in 2013 and has dropped in popularity. 
 - For some high ranked spike/fall names we do not see the fade part because their peak year is the last one in the dataset.
 
 As you might imagine, this is not the end of finding a baby name. Some open questions are:
