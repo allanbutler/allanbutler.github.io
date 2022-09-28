@@ -14,13 +14,13 @@ link: https://allanbutler.github.io/food/
 
 Figure 1.1 Spatchcock Turkey fresh from the oven.
 
-With only two ingredients — buttermilk and salt — this might be the least complicated turkey brine recipe ever. The trickiest step will be pulling out your kitchen scale to weigh out the salt, but it's worth doing if you can to ensure a properly seasoned turkey. The acid in the buttermilk leads to moist, tender meat throughout, while the sugars result in a gorgeous golden-brown skin. This turkey is spatchcocked, which might sound like a lot, but it’s just another way to simplify the recipe: By removing the backbone before brining, you’ll be able to fit the turkey, placed in a 2-gallon plastic resealable bag, in the fridge more easily. And you’ll get a lot more of that beautiful lacquered skin in about half the cooking time. It’s a total win-win situation. Just make sure you don’t skimp on the brining time; 48 hours is essential to make sure the bird gets seasoned through and through. (Watch the video of Samin Nosrat preparing the turkey [here](https://www.youtube.com/watch?v=qVMpiPp28ls)
+With only two ingredients — buttermilk and salt — this might be the least complicated turkey brine recipe ever. The trickiest step will be pulling out your kitchen scale to weigh out the salt, but it's worth doing if you can to ensure a properly seasoned turkey. The acid in the buttermilk leads to moist, tender meat throughout, while the sugars result in a gorgeous golden-brown skin. This turkey is spatchcocked, which might sound like a lot, but it’s just another way to simplify the recipe: By removing the backbone before brining, you’ll be able to fit the turkey, placed in a 2-gallon plastic resealable bag, in the fridge more easily. And you’ll get a lot more of that beautiful lacquered skin in about half the cooking time. It’s a total win-win situation. Just make sure you don’t skimp on the brining time; 48 hours is essential to make sure the bird gets seasoned through and through. (Watch the video of Samin Nosrat preparing the turkey [here](https://www.youtube.com/watch?v=qVMpiPp28ls) )
 
 ## Tips
 
-* A cast iron is preferred but large lidded skillet will do.
+* A large pan is preferred.
 
-This meal provides around 4 servings of shakshuka.
+This meal provides servings equal to pounds of turkey.
 
 [Original Recipe Source](https://cooking.nytimes.com/recipes/1021523-buttermilk-brined-roast-turkey)
 
