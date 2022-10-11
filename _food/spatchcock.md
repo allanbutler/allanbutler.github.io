@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: Spatch Cock
 layout: food
 authors: Allan Butler
@@ -7,9 +7,8 @@ image: img/turkey_done.jpg
 impage_path: img/turkey_done.jpg
 thumbnail-img: /img/turkey_done.jpg
 share-img: /img/turkey_done.jpg -->
-<!-- ---
+---
 
-<!--
 [![turkey_done]({{ site.url }}/img/turkey_done.jpg)]({{ site.url }}/img/turkey_done.jpg)
 
 Figure 1.1 Spatchcock Turkey fresh from the oven.
@@ -64,5 +63,4 @@ Note: Remember that the turkey needs to defrost for 2 - 3 days in the fridge.
 
 Figure 1.2 Finished Shakshuka. Remember everything taste better with Dog hair in it.
 
-[**Back to Recipes**]({{page.link}}) 
--->
+[**Back to Recipes**]({{page.link}})
