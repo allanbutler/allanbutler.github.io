@@ -3,11 +3,11 @@ title: Spatch Cock
 layout: food
 authors: Allan Butler
 link: https://allanbutler.github.io/food/
-# image: img/stove_shakshuka.JPG
-# impage_path: img/stove_shakshuka.JPG
-# link: https://allanbutler.github.io/food/
-# thumbnail-img: /img/stove_shakshuka.JPG
-# share-img: /img/stove_shakshuka.JPG
+image: img/turkey_done.jpg
+impage_path: img/turkey_done.jpg
+link: https://allanbutler.github.io/food/
+thumbnail-img: /img/turkey_done.jpg
+share-img: /img/turkey_done.jpg
 ---
 
 [![turkey_done]({{ site.url }}/img/turkey_done.jpg)]({{ site.url }}/img/turkey_done.jpg)
