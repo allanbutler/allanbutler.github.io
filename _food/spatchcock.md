@@ -54,6 +54,8 @@ Note: Remember that the turkey needs to defrost for 2 - 3 days in the fridge.
 
 [![turkey_raw]({{ site.url }}/img/turkey_raw.jpg)]({{ site.url }}/img/turkey_raw.jpg)
 
+Figure 1.2 Before oven turkey.
+
 6. Position a rack in the upper third of the oven and heat to 400 degrees. Transfer turkey, breast-side up, to another rimmed baking sheet lined with a wire rack or parchment paper. Tuck thighs inward.
 
 7. Place baking sheet on the prepared oven rack and roast the turkey, occasionally rotating the pan 180 degrees, until an instant-read thermometer inserted into the deepest part of the breast registers 150 degrees and the thickest part of the thigh without touching bone registers 165 degrees, about 80 to 100 minutes, depending on size. (You may want to tent the breast or other hot spots with aluminum foil, if darkening too quickly.)
@@ -62,6 +64,6 @@ Note: Remember that the turkey needs to defrost for 2 - 3 days in the fridge.
 
 [![turkey_done]({{ site.url }}/img/turkey_done.jpg)]({{ site.url }}/img/turkey_done.jpg)
 
-Figure 1.2 Finished Shakshuka. Remember everything taste better with Dog hair in it.
+Figure 1.3 Finished Spatchcock turkey!
 
 [**Back to Recipes**]({{page.link}})
