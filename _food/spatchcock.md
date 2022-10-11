@@ -10,7 +10,7 @@ link: https://allanbutler.github.io/food/
 # share-img: /img/stove_shakshuka.JPG
 ---
 
-[![shakshuka_stove]({{ site.url }}/img/stove_shakshuka.JPG)]({{ site.url }}/img/stove_shakshuka.JPG)
+[![turkey_done]({{ site.url }}/img/turkey_done.jpg)]({{ site.url }}/img/turkey_done.jpg)
 
 Figure 1.1 Spatchcock Turkey fresh from the oven.
 
@@ -52,15 +52,15 @@ Note: Remember that the turkey needs to defrost for 2 - 3 days in the fridge.
 4. Place a 2-gallon resealable bag in a large bowl or sink. Pour buttermilk and salt in bag and stir to dissolve salt. Place turkey in bag and seal carefully, expelling out air. Double-bag the turkey as needed to prevent leakage, then squish the inner bag to distribute buttermilk all around the turkey. Place it on a rimmed baking sheet and refrigerate for 48 hours. Turn the bag every 12 hours so that every part of the turkey gets marinated.
 
 5. Three hours before you plan to start cooking, remove the turkey from the plastic bag and scrape off as much buttermilk as you can without being obsessive, discarding buttermilk. Set the turkey on a rimmed baking sheet and bring it to room temperature.
+[![turkey_raw]({{ site.url }}/img/turkey_raw.jpg)]({{ site.url }}/img/turkey_raw.jpg)
 
 6. Position a rack in the upper third of the oven and heat to 400 degrees. Transfer turkey, breast-side up, to another rimmed baking sheet lined with a wire rack or parchment paper. Tuck thighs inward.
 
 7. Place baking sheet on the prepared oven rack and roast the turkey, occasionally rotating the pan 180 degrees, until an instant-read thermometer inserted into the deepest part of the breast registers 150 degrees and the thickest part of the thigh without touching bone registers 165 degrees, about 80 to 100 minutes, depending on size. (You may want to tent the breast or other hot spots with aluminum foil, if darkening too quickly.)
-[![shakshuka]({{ site.url }}/img/table_shakshuka.JPG)]({{ site.url }}/img/table_shakshuka.JPG)
 
 8. Transfer turkey to a cutting board or platter and allow to rest at least 20 minutes before carving.
 
-[![shakshuka]({{ site.url }}/img/table_shakshuka.JPG)]({{ site.url }}/img/table_shakshuka.JPG)
+[![turkey_done]({{ site.url }}/img/turkey_done.jpg)]({{ site.url }}/img/turkey_done.jpg)
 
 Figure 1.2 Finished Shakshuka. Remember everything taste better with Dog hair in it.
 
