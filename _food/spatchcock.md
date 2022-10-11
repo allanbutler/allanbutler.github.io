@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Spatch Cock
 layout: food
 authors: Allan Butler
@@ -7,8 +7,9 @@ image: img/turkey_done.jpg
 impage_path: img/turkey_done.jpg
 thumbnail-img: /img/turkey_done.jpg
 share-img: /img/turkey_done.jpg -->
----
+<!-- ---
 
+<!--
 [![turkey_done]({{ site.url }}/img/turkey_done.jpg)]({{ site.url }}/img/turkey_done.jpg)
 
 Figure 1.1 Spatchcock Turkey fresh from the oven.
@@ -27,7 +28,7 @@ This meal provides servings equal to pounds of turkey.
 
 ## Ingredients
 
-* [2 tablespoons of Olive Oil](https://www.heb.com/product-detail/h-e-b-select-ingredients-extra-virgin-olive-oil-17-oz/127074)
+* [2 tablespoons of Olive Oil](https://www.heb.com/product-detail/h-e-b-select-ingredients-extra-virgin-olive-oil-17-oz/127074) 
 Yield: 10 to 14 servings
 
 * [1 (10- to 14-pound) turkey](https://www.heb.com/product-detail/riverside-frozen-grade-a-whole-turkey-avg-11-45-lbs/374312)
@@ -63,4 +64,5 @@ Note: Remember that the turkey needs to defrost for 2 - 3 days in the fridge.
 
 Figure 1.2 Finished Shakshuka. Remember everything taste better with Dog hair in it.
 
-[**Back to Recipes**]({{page.link}})
+[**Back to Recipes**]({{page.link}}) 
+-->
