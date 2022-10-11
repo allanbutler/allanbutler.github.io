@@ -1,12 +1,12 @@
 ---
-title: Spatch Cock
+title: Spatchcock
 layout: food
 authors: Allan Butler
-<!-- link: https://allanbutler.github.io/food/
+link: https://allanbutler.github.io/food/
 image: img/turkey_done.jpg
 impage_path: img/turkey_done.jpg
 thumbnail-img: /img/turkey_done.jpg
-share-img: /img/turkey_done.jpg -->
+share-img: /img/turkey_done.jpg
 ---
 
 [![turkey_done]({{ site.url }}/img/turkey_done.jpg)]({{ site.url }}/img/turkey_done.jpg)
@@ -51,6 +51,7 @@ Note: Remember that the turkey needs to defrost for 2 - 3 days in the fridge.
 4. Place a 2-gallon resealable bag in a large bowl or sink. Pour buttermilk and salt in bag and stir to dissolve salt. Place turkey in bag and seal carefully, expelling out air. Double-bag the turkey as needed to prevent leakage, then squish the inner bag to distribute buttermilk all around the turkey. Place it on a rimmed baking sheet and refrigerate for 48 hours. Turn the bag every 12 hours so that every part of the turkey gets marinated.
 
 5. Three hours before you plan to start cooking, remove the turkey from the plastic bag and scrape off as much buttermilk as you can without being obsessive, discarding buttermilk. Set the turkey on a rimmed baking sheet and bring it to room temperature.
+
 [![turkey_raw]({{ site.url }}/img/turkey_raw.jpg)]({{ site.url }}/img/turkey_raw.jpg)
 
 6. Position a rack in the upper third of the oven and heat to 400 degrees. Transfer turkey, breast-side up, to another rimmed baking sheet lined with a wire rack or parchment paper. Tuck thighs inward.
