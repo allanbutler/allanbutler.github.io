@@ -2,11 +2,11 @@
 title: Spatch Cock
 layout: food
 authors: Allan Butler
-link: https://allanbutler.github.io/food/
+<!-- link: https://allanbutler.github.io/food/
 image: img/turkey_done.jpg
 impage_path: img/turkey_done.jpg
 thumbnail-img: /img/turkey_done.jpg
-share-img: /img/turkey_done.jpg
+share-img: /img/turkey_done.jpg -->
 ---
 
 [![turkey_done]({{ site.url }}/img/turkey_done.jpg)]({{ site.url }}/img/turkey_done.jpg)
