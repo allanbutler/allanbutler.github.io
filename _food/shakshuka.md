@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Shakshuka
 layout: food
 authors: Allan Butler
@@ -60,3 +60,4 @@ This meal provides around 4 servings of shakshuka.
 Figure 1.2 Finished Shakshuka. Remember everything taste better with Dog hair in it.
 
 [**Back to Recipes**]({{page.link}})
+ -->
