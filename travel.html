@@ -3,6 +3,13 @@ layout: page
 title: Travel
 ---
 
+{% for food in site.travel %}
+  <div class="travel">
+    <h2><a href="{{ travel.url }}">{{ travel.title }} </a></h2>
+
+  </div>
+{% endfor %}
+
 <!-- <h1 class="mt-4">Travel</h1>
 {% assign travel = site.travel | sort: "year" | reverse %}
 {% for pub in travel %}
