@@ -2,9 +2,11 @@
 title: Snowbird Weekend Getaway
 layout: travel
 authors: Allan Butler
-image: img/.JPG
+image: img/side_cliff.JPG
 description: Best Runs at Snowbird (Green to Expert).
 link: https://allanbutler.github.io/travel/
+thumbnail-img: /img/side_cliff.JPG
+share-img: /img/side_cliff.JPG
 ---
 
 [![side_cliff]({{ site.url }}/img/side_cliff.JPG)]({{ site.url }}/img/side_cliff.JPG)
