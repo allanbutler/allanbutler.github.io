@@ -41,16 +41,6 @@ Say goodbye to crowded ski resorts and long lift lines and hello to peaceful ski
 Are you ready to escape the crowds and discover the hidden ski gems of Cottonwood Canyon? From Gadzoom to Mineral Basin, there's no shortage of off-the-beaten-path adventures waiting to be explored. So pack your gear, hit the slopes, and experience the serenity of skiing in Cottonwood Canyon today.
 
 
-Lets get one thing perfectly clear. Snowbird has some of best powder on earth.
-
-## Customizable theme
-
-The theme can be customized just by changing few variables in **\_config.yml** file.
-
-## Lightweight
-
-Since the theme is based on default Jekyll theme, it is very lightweight. No JavaScript except analytics is used!
-
 [![mtn_airplane]({{ site.url }}/img/mtn_airplane.JPG)]({{ site.url }}/img/mtn_airplane.JPG)
 
 [**Back to Travel**]({{page.link}})
