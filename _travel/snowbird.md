@@ -28,7 +28,7 @@ Are you tired of crowded ski resorts and long lift lines? It's time to escape th
 [![Snowbird-Mineral-Basin-Trail-Map]({{ site.url }}/img/Snowbird-Mineral-Basin-Trail-Map.jpg)]({{ site.url }}/img/Snowbird-Mineral-Basin-Trail-Map.jpg)
 
 
-[![Snowbird-Trail-Map]({{ site.url }}/img/Snowbird-Trail-Map.jpg)]({{ site.url }}/img/Snowbird-Trail-Map.jpg
+[![Snowbird-Trail-Map]({{ site.url }}/img/Snowbird-Trail-Map.jpg)]({{ site.url }}/img/Snowbird-Trail-Map.jpg)
 
 ## Gadzoom: Your Gateway to Serene Skiing
 
