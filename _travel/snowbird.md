@@ -39,37 +39,34 @@ Not satisfied with just one round, we took Little Cloud again, this time setting
 [![low_visibility]({{ site.url }}/img/low_visibility.JPG)]({{ site.url }}/img/low_visibility.JPG)
 
 
-[![tree]({{ site.url }}/img/tree.JPG)]({{ site.url }}/img/tree.JPG)
-
 ## Afternoon Adventures:
+
+Post-lunch, we embarked on a journey through the Peruvian Tunnel, emerging into the Mineral Basin.
+
+[![peruvian_tunnel]({{ site.url }}/img/peruvian_tunnel.JPG)]({{ site.url }}/img/peruvian_tunnel.JPG)
+
+[![tunnel]({{ site.url }}/img/tunnel.JPG)]({{ site.url }}/img/tunnel.JPG)
+
+Despite the low to zero visibility, Hamilton Cliffs offered a playground like no other, with each turn and drop adding to the day's excitement. The pursuit of adventure didn't stop there; ascending Baldy, indulging in its inviting blue runs before making our way up to Hidden Peak. The Summit Restaurant at the peak became a brief respite, offering breathtaking views and a moment of relaxation before descending back to the car.
 
 [![board_tree]({{ site.url }}/img/board_tree.JPG)]({{ site.url }}/img/board_tree.JPG)
 
 
-
-[![peruvian_tunnel]({{ site.url }}/img/peruvian_tunnel.JPG)]({{ site.url }}/img/peruvian_tunnel.JPG)
-
-
-[![tunnel]({{ site.url }}/img/tunnel.JPG)]({{ site.url }}/img/tunnel.JPG)
-
-
-Post-lunch, we embarked on a journey through the Peruvian Tunnel, emerging into the Mineral Basin. Despite the low to zero visibility, Hamilton Cliffs offered a playground like no other, with each turn and drop adding to the day's excitement. Our pursuit of adventure didn't stop there; we ascended Baldy, indulging in its inviting blue runs before making our way up to Hidden Peak. The Summit Restaurant at the peak became a brief respite, offering breathtaking views and a moment of relaxation before descending back to the car.
-
 ## A Path Less Traveled:
 One of the day's highlights was discovering a path leading towards Alta, specifically designed for skiers at the top of Mineral Basin, presenting a unique opportunity to explore beyond Snowbird's boundaries.
 
-### Data-Driven Insight: Snowbird Mountain Resort Forecast
+### Snowbird Mountain Resort Forecast
 To complement our personal narrative, let's delve into the snow conditions that made this adventure possible. From February 16th to February 18th, 2024, Snowbird Mountain Resort experienced a significant snowfall, enhancing the skiing & snowboard conditions and providing an ideal setting for an adventure.
 
 [![snow_forecast]({{ site.url }}/img/snow_forecast.png)]({{ site.url }}/img/snow_forecast.png)
 
 Figure: Snow Forecast Chart for Snowbird Mountain Resort.
 
-This chart illustrates the snow forecast, highlighting the accumulation that contributed to the pristine conditions we encountered. With a steady increase in snowfall leading up to and during our visit, the mountain was primed for enthusiasts looking to carve through fresh powder and explore the diverse terrain Snowbird has to offer.
+This chart illustrates the snow forecast, highlighting the accumulation that contributed to the pristine conditions that were encountered. With a steady increase in snowfall leading up to and during our visit, the mountain was primed for enthusiasts looking to carve through fresh powder and explore the diverse terrain Snowbird has to offer.
 
 ## Conclusion:
 
-Our journey through Snowbird Mountain Resort was nothing short of epic, from the serendipitous start in front of Gadzoom to the exploratory ventures through Mineral Basin and beyond. The blend of challenging terrain, breathtaking landscapes, and optimal snow conditions provided an unparalleled skiing experience. For those seeking their next ski adventure, Snowbird beckons with open arms, promising an array of slopes and chutes that cater to every level of skier. 
+The journey through Snowbird Mountain Resort was nothing short of epic, from the serendipitous start in front of Gadzoom to the exploratory ventures through Mineral Basin and beyond. The blend of challenging terrain, breathtaking landscapes, and optimal snow conditions provided an unparalleled skiing & snowboarding experience. For those seeking their next adventure, Snowbird beckons with open arms, promising an array of slopes and chutes that cater to every level of skier or snowboarder. 
 
 [![tree]({{ site.url }}/img/tree.JPG)]({{ site.url }}/img/tree.JPG)
 
@@ -78,7 +75,7 @@ Remember, the mountain is ever-changing, and staying informed with the latest sn
 
 ## Encouragement to Readers:
 
-We encourage every wintoer sport enthusiast to explore Snowbird, armed with the latest snow forecasts and a spirit of adventure. Whether it's navigating the challenging Rasta Chutes or enjoying the panoramic views from Hidden Peak, Snowbird offers a world of adventure waiting to be discovered.
+Encourage every winter sport enthusiast to explore Snowbird, armed with the latest snow forecasts and a spirit of adventure. Whether it's navigating the challenging Rasta Chutes or enjoying the panoramic views from Hidden Peak, Snowbird offers a world of adventure waiting to be discovered.
 
 
 [![mtn_airplane]({{ site.url }}/img/mtn_airplane.JPG)]({{ site.url }}/img/mtn_airplane.JPG)
