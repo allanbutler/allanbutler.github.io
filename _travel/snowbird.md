@@ -45,7 +45,7 @@ Hitting Little Cloud again, this time setting my sights on Regulator Johnson to 
 
 Post-lunch, I embarked on a journey through the Peruvian Tunnel, emerging into the Mineral Basin.
 
-[![peruvian_tunnel]({{ site.url }}/img/peruvian_tunnel.JPG)]({{ site.url }}/img/peruvian_tunnel.JPG)  [![tunnel]({{ site.url }}/img/tunnel.JPG)]({{ site.url }}/img/tunnel.JPG)
+[![peruvian_tunnel]({{ site.url }}/img/peruvian_tunnel.JPG)]({{ site.url }}/img/peruvian_tunnel.JPG) [![tunnel]({{ site.url }}/img/tunnel.JPG)]({{ site.url }}/img/tunnel.JPG)
 
 Despite the low to zero visibility, Hamilton Cliffs offered a playground like no other, with each turn and drop adding to the day's excitement. The pursuit of adventure didn't stop there; ascending Baldy, indulging in its inviting blue runs before making my way up to Hidden Peak. The Summit Restaurant at the peak became a brief respite, offering breathtaking views and a moment of relaxation before descending back to the car.
 
