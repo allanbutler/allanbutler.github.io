@@ -1,5 +1,5 @@
 ---
-title: Snowbird Weekend Getaway
+title: Snowbird Weekend Saga: The Hitchiker, the mountain, & the Dance with Change.
 layout: travel
 authors: Allan Butler
 image: img/side_cliff.JPG
@@ -62,7 +62,7 @@ Figure: Snow Forecast Chart for Snowbird Mountain Resort.
 
 This chart illustrates the snow forecast, highlighting the accumulation that contributed to the pristine conditions that were encountered. With a steady increase in snowfall leading up to and during our visit, the mountain was primed for enthusiasts looking to carve through fresh powder and explore the diverse terrain Snowbird has to offer.
 
-## Conclusion:
+## The Lesson In The Snow:
 
 The journey through Snowbird Mountain Resort was nothing short of epic, from the serendipitous start in front of Gadzoom to the exploratory ventures through Mineral Basin and beyond. The blend of challenging terrain, breathtaking landscapes, and optimal snow conditions provided an unparalleled skiing & snowboarding experience. 
 
