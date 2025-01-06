@@ -1,5 +1,5 @@
 ---
-title: Snowbird Weekend Saga: The Hitchiker, the mountain, & the Dance with Change.
+title: Snowbird Weekend Saga. The Hitchiker, the mountain, & the Dance with Change.
 layout: travel
 authors: Allan Butler
 image: img/side_cliff.JPG
@@ -70,7 +70,7 @@ For those seeking their next adventure, Snowbird beckons with open arms, promisi
 
 [![tree]({{ site.url }}/img/tree.JPG)]({{ site.url }}/img/tree.JPG)
 
-The lesson was clear: like the mountain, life is in constant flux, with new lifts and trails altering the terrain and challenging the status quo. These changes, while unsettling to some, are inevitable and often necessary for growth, offering new perspectives and opportunities. Thus, as we navigate the slopes of Snowbird and life, staying informed and adaptable to the changing conditions is crucial, for in the dance with change lies the essence of our own unfolding story, a journey of growth, resilience, and continuous discovery.
+The lesson was clear: like the mountain, life is in constant flux, with new lifts and trails altering the terrain and challenging the status quo. These changes, while unsettling to some, are inevitable and often necessary for growth, offering new perspectives and opportunities. Thus, as we navigate the slopes of Snowbird and life, staying informed and adaptable to the changing conditions is crucial, for in the dance with change lies the essence of our own unfolding story, a journey of growth, resilience, and continuous discovery. To some, change feels like loss. To others, it’s an invitation—a chance to see the world, the mountain, and ourselves from a new perspective.
 
 [![mtn_airplane]({{ site.url }}/img/mtn_airplane.JPG)]({{ site.url }}/img/mtn_airplane.JPG)
 
