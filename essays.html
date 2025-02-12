@@ -1,0 +1,15 @@
+---
+layout: page
+title: Essays
+permalink: "/essays/"
+image_path: /img/chef.jpg
+cover-img: /img/chef.jpg
+---
+
+{% for essays in site.essays %}
+  <div class="essays">
+    <h2><a href="{{ essays.url }}">{{ essays.title }} </a></h2>
+
+  </div>
+{% endfor %}
+
