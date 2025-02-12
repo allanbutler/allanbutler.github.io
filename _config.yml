@@ -26,6 +26,7 @@ navbar-links:
   Data Science: ""
   Travel: "travel"
   Food: "food"
+  Essays: "essays"
   About Me: "aboutme"
   Author's home: "https://allanbutler.github.io/"
 
@@ -149,6 +150,10 @@ collections:
     permalink: /:collection/:path/
     sort_by: title
   travel:
+    output: true
+    permalink: /:collection/:path/
+    sort_by: title
+  essays:  # ADD THIS
     output: true
     permalink: /:collection/:path/
     sort_by: title
