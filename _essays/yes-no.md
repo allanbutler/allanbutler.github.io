@@ -1,9 +1,9 @@
 ---
 title: The Dance Between Yes and No
-layout: travel
+layout: essays
 authors: Allan Butler
 image: img/.JPG
-link: https://allanbutler.github.io/travel/
+link: https://allanbutler.github.io/essays/
 thumbnail-img: /img/.JPG
 share-img: /img/.JPG
 ---
