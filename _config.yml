@@ -24,6 +24,7 @@ description: Welcome to my personal website!
 # List of links in the navigation bar
 navbar-links:
   Data Science: ""
+  Talks: "talks"
   Travel: "travel"
   Food: "food"
   Essays: "essays"
@@ -153,7 +154,11 @@ collections:
     output: true
     permalink: /:collection/:path/
     sort_by: title
-  essays:  # ADD THIS
+  essays:  
+    output: true
+    permalink: /:collection/:path/
+    sort_by: title
+  talks: 
     output: true
     permalink: /:collection/:path/
     sort_by: title

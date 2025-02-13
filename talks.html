@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Talks"
+permalink: "/talks/"
+---
+
+<div class="talks">
+    <h1>Talks</h1>
+    <p>Lineup of talks where I've broken things down and built 'em back up.</p>
+  
+    <ul>
+      {% for talk in site.talks %}
+        <li>
+          <h2><a href="{{ talk.url }}">{{ talk.title }}</a></h2>
+          <p><strong>{{ talk.event }}</strong> - {{ talk.location }} ({{ talk.date | date: "%B %Y" }})</p>
+          {% if talk.video_url %}
+            <a href="{{ talk.video_url }}" target="_blank">Watch Video</a> |
+          {% endif %}
+          {% if talk.slides_url %}
+            <a href="{{ talk.slides_url }}" target="_blank">View Slides</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  

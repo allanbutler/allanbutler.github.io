@@ -1,0 +1,20 @@
+---
+layout: page
+---
+
+<div class="talk">
+  <h1>{{ page.title }}</h1>
+  <p><strong>{{ page.event }}</strong> - {{ page.location }} ({{ page.date | date: "%B %Y" }})</p>
+
+  {% if page.video_url %}
+    <p><a href="{{ page.video_url }}" target="_blank">Watch the Video</a></p>
+  {% endif %}
+
+  {% if page.slides_url %}
+    <p><a href="{{ page.slides_url }}" target="_blank">View the Slides</a></p>
+  {% endif %}
+
+  <div class="content">
+    {{ content }}
+  </div>
+</div>
