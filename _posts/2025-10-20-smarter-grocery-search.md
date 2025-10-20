@@ -201,7 +201,7 @@ For grocery retail, where discovery often hinges on nuanced attributes like orga
 
 ### How to Try It
 
-1. Clone the repo ([GitLab link here]([https://gitlab.com/butler.allan-heb/smart-grocery-search](https://github.com/allanbutler/kg-rag-grocery))).
+1. Clone the repo ([Github link here]([https://gitlab.com/butler.allan-heb/smart-grocery-search](https://github.com/allanbutler/kg-rag-grocery))).
 2. `poetry install`
 3. `poetry shell`
 4. `poetry run python -m sgs prepare-data` → builds KG + FAISS index.
