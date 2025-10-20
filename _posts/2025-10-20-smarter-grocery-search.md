@@ -9,7 +9,8 @@ tags: [rag, knowledge-graph, dspy, llm]
 
 In modern grocery retail, customers expect search experiences that are fast, relevant, and personalized. If you search for "nut-free granola under $5", a typical keyword search fails because it doesn’t understand "nut-free" as an attribute and it might pull any "granola" regardless of price.
 
-![Granola search screenshot](img/granola_search.png)
+![Granola search screenshot]([allanbutler.github.io](https://allanbutler.github.io/)/img/granola_search.png)
+
 
 This highlights three core challenges:
 
