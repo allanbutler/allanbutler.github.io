@@ -9,7 +9,7 @@ tags: [rag, knowledge-graph, dspy, llm]
 
 In modern grocery retail, customers expect search experiences that are fast, relevant, and personalized. If you search for "nut-free granola under $5", a typical keyword search fails because it doesn’t understand "nut-free" as an attribute and it might pull any "granola" regardless of price.
 
-![Granola search screenshot]([allanbutler.github.io](https://allanbutler.github.io/)/img/granola_search.png)
+[![Granola search screenshot]({{ site.url }}/img/granola_search.png)]({{ site.url }}/img/granola_search.png)
 
 
 This highlights three core challenges:
@@ -85,7 +85,7 @@ In practice, this makes DSPy a natural fit for Knowledge Graph RAG in grocery se
 
 The architecture integrates structured reasoning from a Knowledge Graph (KG) with semantic recall from vector retrieval, orchestrated through a declarative DSPy pipeline. Product data from the grocery catalog (brand, category, nutrition, labels, and price) is ingested into the KG, where it is linked to attributes and relationships such as **HAS_ATTRIBUTE** or **IN_CATEGORY**. At query time, a customer request is decomposed into both free-text (e.g., product names or descriptions) and structured constraints (e.g., nut-free, price < $5). The KG enforces attribute and numeric filters, while embeddings capture broader semantic matches. Candidate products retrieved from both channels are passed to the LLM layer, where DSPy coordinates hybrid reasoning and explanation. This final stage produces not only ranked recommendations but also explicit justifications (e.g., “recommended because it is granola, tagged nut-free, and priced under $5”), ensuring transparency and trust in the system.
 
-![Knowledge graph RAG flow](img/rag_flow.png)
+[![Knowledge graph RAG flow]({{ site.url }}/img/rag_flow.png)]({{ site.url }}/img/rag_flow.png)
 
 ### Sample Grocery Dataset
 
