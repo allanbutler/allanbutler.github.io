@@ -2,6 +2,7 @@
 layout: post
 title: "The Economics of AI Data Science Teams"
 tags: [ai, data-science, economics, strategy, roi]
+math: true
 ---
 
 Most companies know they have an AI team. Far fewer know what that team actually needs to return.
