@@ -1,0 +1,318 @@
+---
+layout: page
+title: Economics of AI Team Calculator
+subtitle: Interactive companion to the blog post
+---
+
+<style>
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .calc-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    background: #fff;
+  }
+  .calc-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .calc-field {
+    margin-bottom: 10px;
+  }
+  .calc-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .calc-field input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  .calc-metric {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  .calc-metric strong {
+    float: right;
+  }
+  .calc-section {
+    margin: 26px 0;
+  }
+  .calc-note {
+    font-size: 13px;
+    color: #666;
+  }
+</style>
+
+<p>
+  This page reproduces the interactive calculators from the React draft in plain JavaScript so they work inside this Jekyll site.
+</p>
+
+<div class="calc-section" id="team-cost">
+  <h3>1) Team Cost</h3>
+  <div class="calc-grid">
+    <div class="calc-card">
+      <h4>Headcount</h4>
+      <div class="calc-field"><label>Data scientists</label><input id="dsCount" type="number" min="0" value="4"></div>
+      <div class="calc-field"><label>ML engineers</label><input id="mlCount" type="number" min="0" value="2"></div>
+      <div class="calc-field"><label>Data engineers</label><input id="deCount" type="number" min="0" value="1"></div>
+      <div class="calc-field"><label>PM / AI leads</label><input id="pmCount" type="number" min="0" value="1"></div>
+      <div class="calc-field"><label>Manager allocation</label><input id="managerCount" type="number" min="0" step="0.5" value="1"></div>
+    </div>
+    <div class="calc-card">
+      <h4>Loaded Costs</h4>
+      <div class="calc-field"><label>DS cost</label><input id="dsCost" type="number" min="0" step="5000" value="215000"></div>
+      <div class="calc-field"><label>ML Eng cost</label><input id="mlCost" type="number" min="0" step="5000" value="235000"></div>
+      <div class="calc-field"><label>Data Eng cost</label><input id="deCost" type="number" min="0" step="5000" value="210000"></div>
+      <div class="calc-field"><label>PM / AI lead cost</label><input id="pmCost" type="number" min="0" step="5000" value="205000"></div>
+      <div class="calc-field"><label>Manager cost</label><input id="managerCost" type="number" min="0" step="5000" value="260000"></div>
+    </div>
+    <div class="calc-card">
+      <h4>Overhead</h4>
+      <div class="calc-field"><label>Infra overhead (%)</label><input id="infraOverheadPct" type="number" min="0" max="100" step="1" value="22"></div>
+      <div class="calc-field"><label>Fixed API / platform spend</label><input id="apiInfraFixed" type="number" min="0" step="10000" value="120000"></div>
+      <hr>
+      <div class="calc-metric">Payroll <strong id="teamPayroll"></strong></div>
+      <div class="calc-metric">Overhead + infra <strong id="teamOverhead"></strong></div>
+      <div class="calc-metric">Annual cost <strong id="teamAnnual"></strong></div>
+      <div class="calc-metric">Monthly burn <strong id="teamMonthly"></strong></div>
+      <div class="calc-metric">Daily cost <strong id="teamDaily"></strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="calc-section" id="internal-roi">
+  <h3>2) Internal ROI</h3>
+  <div class="calc-grid">
+    <div class="calc-card">
+      <h4>Assumptions</h4>
+      <div class="calc-field"><label>Users served</label><input id="usersServed" type="number" min="0" value="180"></div>
+      <div class="calc-field"><label>Loaded hourly rate</label><input id="loadedHourlyRate" type="number" min="0" value="78"></div>
+      <div class="calc-field"><label>Hours saved per user / week</label><input id="hoursSavedPerWeek" type="number" min="0" step="0.1" value="1.8"></div>
+      <div class="calc-field"><label>Adoption rate (%)</label><input id="adoptionRate" type="number" min="0" max="100" value="62"></div>
+      <div class="calc-field"><label>Realization factor (%)</label><input id="realizationRate" type="number" min="0" max="100" value="70"></div>
+    </div>
+    <div class="calc-card">
+      <h4>Outputs</h4>
+      <div class="calc-metric">Monthly hours unlocked <strong id="internalMonthlyHours"></strong></div>
+      <div class="calc-metric">Monthly value <strong id="internalMonthlyValue"></strong></div>
+      <div class="calc-metric">Break-even status <strong id="internalBreakEven"></strong></div>
+      <div class="calc-metric">3x threshold <strong id="internal3x"></strong></div>
+      <div class="calc-metric">5x threshold <strong id="internal5x"></strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="calc-section" id="customer-lift">
+  <h3>3) Customer Lift</h3>
+  <div class="calc-grid">
+    <div class="calc-card">
+      <h4>Assumptions</h4>
+      <div class="calc-field"><label>Monthly customers / sessions</label><input id="monthlyCustomers" type="number" min="0" step="1000" value="250000"></div>
+      <div class="calc-field"><label>Traffic impacted (%)</label><input id="trafficImpacted" type="number" min="0" max="100" value="35"></div>
+      <div class="calc-field"><label>Baseline conversion (%)</label><input id="baselineConversion" type="number" min="0" step="0.1" value="3.2"></div>
+      <div class="calc-field"><label>Expected relative lift (%)</label><input id="expectedLift" type="number" min="0" max="100" value="8"></div>
+      <div class="calc-field"><label>Contribution per conversion</label><input id="valuePerConversion" type="number" min="0" value="48"></div>
+    </div>
+    <div class="calc-card">
+      <h4>Outputs</h4>
+      <div class="calc-metric">Impacted traffic <strong id="custImpacted"></strong></div>
+      <div class="calc-metric">Added conversions <strong id="custAddedConv"></strong></div>
+      <div class="calc-metric">Monthly value <strong id="custMonthlyValue"></strong></div>
+      <div class="calc-metric">Value / cost multiple <strong id="custMultiple"></strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="calc-section" id="portfolio-math">
+  <h3>4) Portfolio Math</h3>
+  <div class="calc-grid">
+    <div class="calc-card">
+      <h4>Assumptions</h4>
+      <div class="calc-field"><label>Initiative success rate (%)</label><input id="initiativeSuccessRate" type="number" min="0" max="100" value="35"></div>
+      <div class="calc-field"><label>Major initiatives / year</label><input id="majorInitiativesPerYear" type="number" min="1" value="6"></div>
+      <div class="calc-field"><label>Maintenance drag (%)</label><input id="maintenanceDragPct" type="number" min="0" max="100" value="18"></div>
+    </div>
+    <div class="calc-card">
+      <h4>Outputs</h4>
+      <div class="calc-metric">Adjusted annual cost <strong id="portAdjustedAnnual"></strong></div>
+      <div class="calc-metric">Successful initiatives <strong id="portSuccessful"></strong></div>
+      <div class="calc-metric">Break-even / success <strong id="portBreakEven"></strong></div>
+      <div class="calc-metric">3x / success <strong id="port3x"></strong></div>
+      <div class="calc-metric">5x / success <strong id="port5x"></strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="calc-section" id="ramp-vs-reality">
+  <h3>5) Ramp vs Reality (12-month summary)</h3>
+  <div class="calc-grid">
+    <div class="calc-card">
+      <h4>Assumptions</h4>
+      <div class="calc-field"><label>Expected peak monthly value</label><input id="expectedPeakValue" type="number" min="0" step="10000" value="300000"></div>
+      <div class="calc-field"><label>Actual peak monthly value</label><input id="actualPeakValue" type="number" min="0" step="10000" value="180000"></div>
+      <div class="calc-field"><label>Expected ramp (months)</label><input id="expectedRampMonths" type="number" min="1" max="12" value="4"></div>
+      <div class="calc-field"><label>Actual ramp (months)</label><input id="actualRampMonths" type="number" min="1" max="12" value="7"></div>
+      <div class="calc-field"><label>Monthly decay after peak (%)</label><input id="decayPct" type="number" min="0" max="100" value="6"></div>
+    </div>
+    <div class="calc-card">
+      <h4>Outputs</h4>
+      <div class="calc-metric">12-mo cost <strong id="scenarioCost"></strong></div>
+      <div class="calc-metric">12-mo expected value <strong id="scenarioExpected"></strong></div>
+      <div class="calc-metric">12-mo actual value <strong id="scenarioActual"></strong></div>
+      <div class="calc-metric">Cumulative gap <strong id="scenarioGap"></strong></div>
+    </div>
+  </div>
+  <p class="calc-note">This version includes the same underlying economics logic as the JSX draft, with a compact summary instead of the React chart.</p>
+</div>
+
+<script>
+  (function () {
+    function n(id) {
+      var raw = Number(document.getElementById(id).value);
+      return Number.isFinite(raw) ? raw : 0;
+    }
+
+    function usd(v) {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
+      }).format(Number.isFinite(v) ? v : 0);
+    }
+
+    function num(v, digits) {
+      return new Intl.NumberFormat("en-US", {
+        maximumFractionDigits: digits || 0
+      }).format(Number.isFinite(v) ? v : 0);
+    }
+
+    function out(id, value) {
+      document.getElementById(id).textContent = value;
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    function calculate() {
+      var dsCount = n("dsCount");
+      var mlCount = n("mlCount");
+      var deCount = n("deCount");
+      var pmCount = n("pmCount");
+      var managerCount = n("managerCount");
+      var dsCost = n("dsCost");
+      var mlCost = n("mlCost");
+      var deCost = n("deCost");
+      var pmCost = n("pmCost");
+      var managerCost = n("managerCost");
+      var infraOverheadPct = n("infraOverheadPct");
+      var apiInfraFixed = n("apiInfraFixed");
+
+      var payroll = dsCount * dsCost + mlCount * mlCost + deCount * deCost + pmCount * pmCost + managerCount * managerCost;
+      var overhead = payroll * (infraOverheadPct / 100) + apiInfraFixed;
+      var annual = payroll + overhead;
+      var monthly = annual / 12;
+      var daily = annual / 260;
+
+      out("teamPayroll", usd(payroll));
+      out("teamOverhead", usd(overhead));
+      out("teamAnnual", usd(annual));
+      out("teamMonthly", usd(monthly));
+      out("teamDaily", usd(daily));
+
+      var usersServed = n("usersServed");
+      var loadedHourlyRate = n("loadedHourlyRate");
+      var hoursSavedPerWeek = n("hoursSavedPerWeek");
+      var adoptionRate = n("adoptionRate");
+      var realizationRate = n("realizationRate");
+
+      var monthlyHours = usersServed * (hoursSavedPerWeek * 4.33) * (adoptionRate / 100) * (realizationRate / 100);
+      var monthlyValue = monthlyHours * loadedHourlyRate;
+      var viable3x = monthly * 3;
+      var healthy5x = monthly * 5;
+
+      out("internalMonthlyHours", num(monthlyHours, 0));
+      out("internalMonthlyValue", usd(monthlyValue));
+      out("internalBreakEven", monthlyValue >= monthly ? "Cleared" : "Not cleared");
+      out("internal3x", usd(viable3x));
+      out("internal5x", usd(healthy5x));
+
+      var monthlyCustomers = n("monthlyCustomers");
+      var trafficImpacted = n("trafficImpacted");
+      var baselineConversion = n("baselineConversion");
+      var expectedLift = n("expectedLift");
+      var valuePerConversion = n("valuePerConversion");
+
+      var impacted = monthlyCustomers * (trafficImpacted / 100);
+      var baselineConvCount = impacted * (baselineConversion / 100);
+      var addedConversions = baselineConvCount * (expectedLift / 100);
+      var customerMonthlyValue = addedConversions * valuePerConversion;
+      var multiple = monthly > 0 ? customerMonthlyValue / monthly : 0;
+
+      out("custImpacted", num(impacted, 0));
+      out("custAddedConv", num(addedConversions, 0));
+      out("custMonthlyValue", usd(customerMonthlyValue));
+      out("custMultiple", multiple.toFixed(1) + "x");
+
+      var initiativeSuccessRate = n("initiativeSuccessRate");
+      var majorInitiativesPerYear = n("majorInitiativesPerYear");
+      var maintenanceDragPct = n("maintenanceDragPct");
+
+      var adjustedAnnualCost = annual * (1 + maintenanceDragPct / 100);
+      var successfulInitiatives = Math.max(1, majorInitiativesPerYear * (initiativeSuccessRate / 100));
+      var breakEvenPerWin = adjustedAnnualCost / successfulInitiatives;
+
+      out("portAdjustedAnnual", usd(adjustedAnnualCost));
+      out("portSuccessful", successfulInitiatives.toFixed(1));
+      out("portBreakEven", usd(breakEvenPerWin));
+      out("port3x", usd((adjustedAnnualCost * 3) / successfulInitiatives));
+      out("port5x", usd((adjustedAnnualCost * 5) / successfulInitiatives));
+
+      var expectedPeakValue = n("expectedPeakValue");
+      var actualPeakValue = n("actualPeakValue");
+      var expectedRampMonths = clamp(n("expectedRampMonths"), 1, 12);
+      var actualRampMonths = clamp(n("actualRampMonths"), 1, 12);
+      var decayPct = n("decayPct");
+
+      var cumulativeCost = 0;
+      var cumulativeExpected = 0;
+      var cumulativeActual = 0;
+
+      for (var i = 1; i <= 12; i += 1) {
+        var cost = monthly;
+        var expectedMonthlyValue = i <= expectedRampMonths
+          ? (expectedPeakValue / expectedRampMonths) * i
+          : Math.max(expectedPeakValue * (1 - (i - expectedRampMonths - 1) * (decayPct / 100)), expectedPeakValue * 0.6);
+
+        var actualMonthlyValue = i <= actualRampMonths
+          ? (actualPeakValue / actualRampMonths) * i
+          : Math.max(actualPeakValue * (1 - (i - actualRampMonths - 1) * ((decayPct + 3) / 100)), actualPeakValue * 0.45);
+
+        cumulativeCost += cost;
+        cumulativeExpected += expectedMonthlyValue;
+        cumulativeActual += actualMonthlyValue;
+      }
+
+      out("scenarioCost", usd(cumulativeCost));
+      out("scenarioExpected", usd(cumulativeExpected));
+      out("scenarioActual", usd(cumulativeActual));
+      out("scenarioGap", usd(cumulativeActual - cumulativeCost));
+    }
+
+    var inputs = document.querySelectorAll("input");
+    for (var i = 0; i < inputs.length; i += 1) {
+      inputs[i].addEventListener("input", calculate);
+    }
+
+    calculate();
+  })();
+</script>
